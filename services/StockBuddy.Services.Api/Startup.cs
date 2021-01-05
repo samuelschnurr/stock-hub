@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StockBuddy.Api
+namespace StockBuddy.Services.Api
 {
     public class Startup
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace StockBuddy.Service.Api
+namespace StockBuddy.Api
 {
     public class WeatherForecast
     {

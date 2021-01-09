@@ -3,27 +3,31 @@
   <div class="form-group">
     <label>Name</label>
     <input
-      class="form-control form-control-lg"
+      class="form-control"
       placeholder="Name"
       name="name"
       #name="ngModel"
       [(ngModel)]="stockService.formData.name"
     />
   </div>
-  <label>Amount</label>
-  <input
-    class="form-control form-control-lg"
-    placeholder="Amount"
-    name="amount"
-    #name="ngModel"
-    [(ngModel)]="stockService.formData.amount"
-  />
-  <label>Acquisition price per Unit</label>
-  <input
-    class="form-control form-control-lg"
-    placeholder="Acquisition price per Unit"
-    name="acquisitionPricePerUnit"
-    #acquisitionPricePerUnit="ngModel"
-    [(ngModel)]="stockService.formData.acquisitionPricePerUnit"
-  />
+  <div class="form-group">
+    <label>Amount</label>
+    <input
+      class="form-control"
+      placeholder="Amount"
+      name="amount"
+      #name="ngModel"
+      [(ngModel)]="stockService.formData.amount"
+    />
+  </div>
+  <div class="form-group">
+    <label>Acquisition price per Unit</label>
+    <input
+      class="form-control"
+      placeholder="Acquisition price per Unit"
+      name="acquisitionPricePerUnit"
+      #acquisitionPricePerUnit="ngModel"
+      [(ngModel)]="stockService.formData.acquisitionPricePerUnit"
+    />
+  </div>
 </form>

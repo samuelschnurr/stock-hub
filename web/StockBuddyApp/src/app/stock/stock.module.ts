@@ -6,6 +6,9 @@ import { StockDetailsComponent } from './stock-details/stock-details.component';
   declarations: [StockDetailsComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    StockDetailsComponent
   ]
 })
 

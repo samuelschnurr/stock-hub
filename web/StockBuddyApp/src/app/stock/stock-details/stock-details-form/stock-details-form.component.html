@@ -1,13 +1,29 @@
 <form>
   <input type="hidden" name="stockId" [value]="stockService.formData.stockId" />
   <div class="form-group">
-    <label>WKN</label>
+    <label>Name</label>
     <input
       class="form-control form-control-lg"
-      placeholder="WKN"
-      name="wkn"
-      #wkn="ngModel"
-      [(ngModel)]="stockService.formData.wkn"
+      placeholder="Name"
+      name="name"
+      #name="ngModel"
+      [(ngModel)]="stockService.formData.name"
     />
   </div>
+  <label>Amount</label>
+  <input
+    class="form-control form-control-lg"
+    placeholder="Amount"
+    name="amount"
+    #name="ngModel"
+    [(ngModel)]="stockService.formData.amount"
+  />
+  <label>Acquisition price per Unit</label>
+  <input
+    class="form-control form-control-lg"
+    placeholder="Acquisition price per Unit"
+    name="acquisitionPricePerUnit"
+    #acquisitionPricePerUnit="ngModel"
+    [(ngModel)]="stockService.formData.acquisitionPricePerUnit"
+  />
 </form>

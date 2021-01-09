@@ -1,12 +1,13 @@
 <form>
-    <input type="hidden" name="stockId" [value]="stockService.formData.stockId" />
-    <div class="form-group">
-      <label>WKN</label>
-      <input
-        class="form-control form-control-lg"
-        placeholder="WKN"
-        name="wkn"
-      />
-    </div>
-  </form>
-  
+  <input type="hidden" name="stockId" [value]="stockService.formData.stockId" />
+  <div class="form-group">
+    <label>WKN</label>
+    <input
+      class="form-control form-control-lg"
+      placeholder="WKN"
+      name="wkn"
+      #wkn="ngModel"
+      [(ngModel)]="stockService.formData.wkn"
+    />
+  </div>
+</form>

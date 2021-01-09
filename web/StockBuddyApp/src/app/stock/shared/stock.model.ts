@@ -3,8 +3,6 @@
  */
 export class Stock {
     public stockId = 0;
-    public wkn = '';
-    public isin = '';
     public name = '';
     public amount = 0;
     public acquisitionPricePerUnit = 0;

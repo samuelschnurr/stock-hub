@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StockService } from '../../shared/stock.service';
 
 @Component({
   selector: 'app-stock-details-form',
@@ -6,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stock-details-form.component.css']
 })
 export class StockDetailsFormComponent implements OnInit {
-
-  constructor() { }
+  constructor(public stockService: StockService) { }
 
   ngOnInit(): void {
   }

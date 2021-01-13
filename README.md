@@ -1,1 +1,1 @@
-# StockBuddy
+# StockHub

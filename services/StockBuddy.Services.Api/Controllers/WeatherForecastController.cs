@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StockBuddy.Services.Api.Controllers
+namespace StockHubApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

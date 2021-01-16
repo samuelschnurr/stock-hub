@@ -115,6 +115,10 @@ a:hover {
   border-color: #1976d2;
 }
 
+input.invalid {
+  border-color: red;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
   .card-container > *:not(.circle-link),

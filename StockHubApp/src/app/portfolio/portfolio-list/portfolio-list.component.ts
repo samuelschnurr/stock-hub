@@ -4,7 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-portfolio-list',
   templateUrl: './portfolio-list.component.html'
 })
-export class PortfolioListComponent {
-
-  constructor() { }
-}
+export class PortfolioListComponent { }

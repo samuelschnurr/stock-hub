@@ -3,9 +3,6 @@ import { Stock } from './stock.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-/**
- * Class Definition of Stock.
- */
 @Injectable({
   providedIn: 'root'
 })

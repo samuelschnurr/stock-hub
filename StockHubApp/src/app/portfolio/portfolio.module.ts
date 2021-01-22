@@ -4,8 +4,6 @@ import { PortfolioListComponent } from './portfolio-list/portfolio-list.componen
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { PortfolioDashboardComponent } from './portfolio-dashboard/portfolio-dashboard.component';
 
-
-
 @NgModule({
   declarations: [PortfolioListComponent, PortfolioDetailsComponent, PortfolioDashboardComponent],
   imports: [

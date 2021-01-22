@@ -4,8 +4,7 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-stock-details-form',
-  templateUrl: './stock-details-form.component.html',
-  styleUrls: ['./stock-details-form.component.css']
+  templateUrl: './stock-details-form.component.html'
 })
 export class StockDetailsFormComponent {
   public constructor(public stockService: StockService) { }

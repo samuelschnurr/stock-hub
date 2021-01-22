@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-portfolio-dashboard',
   templateUrl: './portfolio-dashboard.component.html',
   styleUrls: ['./portfolio-dashboard.component.css']
 })
-export class PortfolioDashboardComponent implements OnInit {
+export class PortfolioDashboardComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

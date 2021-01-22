@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { StockDetailsComponent } from './stock-details/stock-details.component';
 import { StockDetailsFormComponent } from './stock-details/stock-details-form/stock-details-form.component';
 
@@ -8,7 +9,8 @@ import { StockDetailsFormComponent } from './stock-details/stock-details-form/st
   declarations: [StockDetailsComponent, StockDetailsFormComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [
     StockDetailsComponent

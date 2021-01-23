@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StockHubApi.Data;
 
 namespace StockHubApi.Migrations
 {
     [DbContext(typeof(StockHubDbContext))]
-    partial class StockHubDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210123181801_AddedAcquisitionPricePerUnit")]
+    partial class AddedAcquisitionPricePerUnit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

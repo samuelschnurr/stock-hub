@@ -4,7 +4,7 @@ namespace StockHubApi.Models
 {
     public class Stock : Base
     {
-        [Column(TypeName="NVARCHAR(3)")]
+        [Column(TypeName="NVARCHAR(50)")]
         public string Name { get; set; }
 
         [Column(TypeName = "DECIMAL(17,4)")]

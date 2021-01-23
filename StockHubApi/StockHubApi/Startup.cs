@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using StockHubApi.Data;
 
 namespace StockHubApi
 {
@@ -19,6 +21,8 @@ namespace StockHubApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<StockHubDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("StockHubDb")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

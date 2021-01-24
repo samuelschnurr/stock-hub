@@ -10,6 +10,7 @@
       [(ngModel)]="stockService.formData.name"
       required [class.invalid]="name.invalid && name.touched"
       minlength="3"
+      maxlength="50"
     />
   </div>
   <div class="form-group">

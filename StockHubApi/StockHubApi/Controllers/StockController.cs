@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StockHubApi.Models;
 using System.Collections.Generic;
 
 namespace StockHubApi.Controllers
@@ -20,7 +21,7 @@ namespace StockHubApi.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(Stock stock)
         {
         }
 

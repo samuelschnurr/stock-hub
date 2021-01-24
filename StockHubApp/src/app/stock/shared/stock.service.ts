@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class StockService {
   public formData: Stock = new Stock();
-  private readonly baseUrl = '...';
+  private readonly baseUrl = 'https://localhost:44370/api/stock';
 
   /**
    * Initializes a new instance of the StockService class.

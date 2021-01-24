@@ -10,6 +10,8 @@ namespace StockHubApi
 {
     public class Startup
     {
+        private const string AllowSpecificOrigins = "allowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -20,6 +22,16 @@ namespace StockHubApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: AllowSpecificOrigins, builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200");
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyHeader();
+                });
+            });
+
             services.AddControllers();
             services.AddDbContext<StockHubDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("StockHubDb")));
@@ -27,7 +39,7 @@ namespace StockHubApi
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
+        {   
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -36,6 +48,8 @@ namespace StockHubApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(AllowSpecificOrigins);
 
             app.UseAuthorization();
 

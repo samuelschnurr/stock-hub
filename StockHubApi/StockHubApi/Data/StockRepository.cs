@@ -1,4 +1,6 @@
 ﻿using StockHubApi.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace StockHubApi.Data
 {
@@ -11,10 +13,32 @@ namespace StockHubApi.Data
             this.dbContext = dbContext;
         }
 
-        public void Create(Stock stock)
+        public IEnumerable<Stock> GetStocks()
         {
-            this.dbContext.Stocks.Add(stock);
-            this.dbContext.SaveChanges();
+            return dbContext.Stocks;
+        }
+
+        public Stock GetStock(int id)
+        {
+            return dbContext.Stocks.Single(s => s.Id == id);
+        }
+
+        public void CreateStock(Stock stock)
+        {
+            dbContext.Stocks.Add(stock);
+            dbContext.SaveChanges();
+        }
+
+        public void UpdateStock(Stock stock)
+        {
+            dbContext.Stocks.Update(stock);
+            dbContext.SaveChanges();
+        }
+
+        public void DeleteStock(int id)
+        {
+            dbContext.Stocks.Remove(new Stock() { Id = id });
+            dbContext.SaveChanges();
         }
     }
 }

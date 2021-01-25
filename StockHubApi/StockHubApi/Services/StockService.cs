@@ -1,20 +1,41 @@
 ﻿using StockHubApi.Data;
 using StockHubApi.Models;
+using System.Collections.Generic;
 
 namespace StockHubApi.Services
 {
     public class StockService
     {
-        StockRepository stockRepository;
+        private StockRepository stockRepository;
 
         public StockService(StockRepository stockRepository)
         {
             this.stockRepository = stockRepository;
         }
 
-        public void Create(Stock stock)
+        public IEnumerable<Stock> GetStocks()
         {
-            stockRepository.Create(stock);
+            return stockRepository.GetStocks();
+        }
+
+        public string GetStock(int id)
+        {
+            return stockRepository.GetStock(id);
+        }
+
+        public void CreateStock(Stock stock)
+        {
+            stockRepository.CreateStock(stock);
+        }
+
+        public void UpdateStock(Stock stock)
+        {
+            stockRepository.UpdateStock(stock);
+        }
+
+        public void DeleteStock(int id)
+        {
+            stockRepository.DeleteStock(id);
         }
     }
 }

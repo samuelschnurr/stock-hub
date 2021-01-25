@@ -9,38 +9,41 @@ namespace StockHubApi.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
-        StockService stockService;
+        private StockService stockService;
 
         public StockController(StockService stockService)
         {
             this.stockService = stockService;
         }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Stock> Index()
         {
-            return new string[] { "value1", "value2" };
+            return stockService.GetStocks();
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public string Show(int id)
         {
-            return "value";
+            return stockService.GetStock(id);
         }
 
         [HttpPost]
-        public void New(Stock stock)
+        public void Create(Stock stock)
         {
-            stockService.Create(stock);
+            stockService.CreateStock(stock);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Update(Stock stock)
         {
+            stockService.UpdateStock(stock);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            stockService.DeleteStock(id);
         }
     }
 }

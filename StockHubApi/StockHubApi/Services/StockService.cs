@@ -18,7 +18,7 @@ namespace StockHubApi.Services
             return stockRepository.GetStocks();
         }
 
-        public string GetStock(int id)
+        public Stock GetStock(int id)
         {
             return stockRepository.GetStock(id);
         }

@@ -23,7 +23,7 @@ namespace StockHubApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public string Show(int id)
+        public Stock Show(int id)
         {
             return stockService.GetStock(id);
         }

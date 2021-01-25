@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StockHubApi.Data;
+using StockHubApi.Services;
 
 namespace StockHubApi
 {
@@ -31,6 +32,9 @@ namespace StockHubApi
                     builder.AllowAnyHeader();
                 });
             });
+
+            services.AddTransient<StockService>();
+            services.AddTransient<StockRepository>();
 
             services.AddControllers();
             services.AddDbContext<StockHubDbContext>(options =>

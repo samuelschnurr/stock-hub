@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StockHubApi.Models;
+using StockHubApi.Services;
 using System.Collections.Generic;
 
 namespace StockHubApi.Controllers
@@ -8,6 +9,12 @@ namespace StockHubApi.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
+        StockService stockService;
+
+        public StockController(StockService stockService)
+        {
+            this.stockService = stockService;
+        }
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -21,8 +28,9 @@ namespace StockHubApi.Controllers
         }
 
         [HttpPost]
-        public void Post(Stock stock)
+        public void New(Stock stock)
         {
+            stockService.Create(stock);
         }
 
         [HttpPut("{id}")]

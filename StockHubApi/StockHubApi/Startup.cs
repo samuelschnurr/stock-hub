@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StockHubApi.Data;
-using StockHubApi.Services;
+using StockHubApi.Utils;
 
 namespace StockHubApi
 {
@@ -33,17 +33,16 @@ namespace StockHubApi
                 });
             });
 
-            services.AddTransient<StockService>();
-            services.AddTransient<StockRepository>();
-
             services.AddControllers();
+            services.AddCustomServices();
+            services.AddCustomRepositories();        
             services.AddDbContext<StockHubDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("StockHubDb")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {   
+        {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

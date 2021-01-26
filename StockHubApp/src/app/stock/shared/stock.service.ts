@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class StockService {
   public formData: Stock = new Stock();
+  public list: Stock[] = [];
   private readonly baseUrl = 'https://localhost:44370/api/stock';
 
   /**
@@ -22,5 +23,12 @@ export class StockService {
    */
   public postStock(): Observable<object> {
     return this.httpClient.post(this.baseUrl, this.formData);
+  }
+
+  public refreshList(): Promise<void | Stock[]> {
+    return this.httpClient.get(this.baseUrl)
+      .toPromise()
+      .then(result => this.list = result as Stock[],
+        error => console.log(error));
   }
 }

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PortfolioListComponent } from './portfolio-list/portfolio-list.component';
-import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 import { PortfolioDashboardComponent } from './portfolio-dashboard/portfolio-dashboard.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
-  declarations: [PortfolioListComponent, PortfolioDetailsComponent, PortfolioDashboardComponent],
+  declarations: [PortfolioDashboardComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    CoreModule
   ]
 })
 export class PortfolioModule { }

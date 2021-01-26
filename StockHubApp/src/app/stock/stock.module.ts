@@ -11,10 +11,6 @@ import { StockListComponent } from './stock-list/stock-list.component';
     CommonModule,
     FormsModule,
     HttpClientModule
-  ],
-  exports: [
-    StockDetailsComponent
   ]
 })
-
 export class StockModule { }

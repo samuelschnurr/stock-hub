@@ -19,10 +19,3 @@ footer a {
   display: flex;
   align-items: center;
 }
-
-svg#rocket {
-  width: 80px;
-  position: absolute;
-  left: -10px;
-  top: -36px;
-}

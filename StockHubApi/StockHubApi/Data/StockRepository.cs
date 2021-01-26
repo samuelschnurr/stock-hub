@@ -6,7 +6,7 @@ namespace StockHubApi.Data
 {
     public class StockRepository
     {
-        private StockHubDbContext dbContext;
+        private readonly StockHubDbContext dbContext;
 
         public StockRepository(StockHubDbContext dbContext)
         {

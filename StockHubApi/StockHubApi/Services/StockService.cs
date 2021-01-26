@@ -6,7 +6,7 @@ namespace StockHubApi.Services
 {
     public class StockService
     {
-        private StockRepository stockRepository;
+        private readonly StockRepository stockRepository;
 
         public StockService(StockRepository stockRepository)
         {

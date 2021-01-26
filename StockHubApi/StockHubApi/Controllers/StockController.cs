@@ -9,7 +9,7 @@ namespace StockHubApi.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
-        private StockService stockService;
+        private readonly StockService stockService;
 
         public StockController(StockService stockService)
         {

@@ -8,10 +8,30 @@ import { Router } from '@angular/router';
   templateUrl: './stock-details.component.html'
 })
 export class StockDetailsComponent {
-  public constructor(private router: Router, public stockService: StockService) { }
+  public constructor(public stockService: StockService, private router: Router) { }
 
   public onSubmit(form: NgForm): void {
+    if (this.stockService.formData.id === 0) {
+      this.insertRecord(form);
+    } else {
+      this.updateRecord(form);
+    }
+  }
+
+  private insertRecord(form: NgForm): void {
     this.stockService.postStock().subscribe(
+      result => {
+        console.log("success");
+        this.router.navigate(['stocks']);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  private updateRecord(form: NgForm): void {
+    this.stockService.updateStock().subscribe(
       result => {
         console.log("success");
         this.router.navigate(['stocks']);

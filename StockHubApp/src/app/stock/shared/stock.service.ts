@@ -25,6 +25,10 @@ export class StockService {
     return this.httpClient.post(this.baseUrl, this.formData);
   }
 
+  public updateStock(): Observable<object> {
+    return this.httpClient.put(`${this.baseUrl}/${this.formData.id}`, this.formData);
+  }
+
   public refreshList(): Promise<void | Stock[]> {
     return this.httpClient.get(this.baseUrl)
       .toPromise()

@@ -21,7 +21,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let stock of stockService.list">
+    <tr *ngFor="let stock of stockService.list" (click)="populateForm(stock)">
       <td>{{ stock.name }}</td>
       <td>{{ stock.amount }}</td>
       <td class="text-right">{{ stock.acquisitionPricePerUnit }}</td>

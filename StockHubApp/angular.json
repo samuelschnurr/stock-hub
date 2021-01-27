@@ -25,7 +25,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+              "glob": "bootstrap-icons.svg",
+              "input": "./node_modules/bootstrap-icons/",
+              "output": "/assets/bootstrap-icons"
+              }
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StockModule } from './stock/stock.module';
 import { CoreModule } from './core/core.module';
-import { ChartModule } from './chart/chart.module';
+import { PortfolioModule } from './portfolio/portfolio.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { ChartModule } from './chart/chart.module';
     BrowserModule,
     CoreModule,
     StockModule,
-    ChartModule
+    PortfolioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

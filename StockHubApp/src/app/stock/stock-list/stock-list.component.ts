@@ -20,4 +20,16 @@ export class StockListComponent implements OnInit {
     // Use Object.assign to not copy the reference to the list
     this.stockService.formData = Object.assign({}, selectedRecord);
   }
+
+  public onDelete(id: number): void {
+    this.stockService.deleteStock(id).subscribe(
+      result => {
+        console.log('success');
+        this.stockService.refreshList();
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
 }

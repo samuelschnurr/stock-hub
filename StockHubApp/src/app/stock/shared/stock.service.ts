@@ -29,6 +29,10 @@ export class StockService {
     return this.httpClient.put(`${this.baseUrl}/${this.formData.id}`, this.formData);
   }
 
+  public deleteStock(id: number): Observable<object> {
+    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+  }
+
   public refreshList(): Promise<void | Stock[]> {
     return this.httpClient.get(this.baseUrl)
       .toPromise()

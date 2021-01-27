@@ -4,13 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StockDetailsComponent } from './stock-details/stock-details.component';
 import { StockListComponent } from './stock-list/stock-list.component';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [StockDetailsComponent, StockListComponent],
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule
   ]
 })
 export class StockModule { }

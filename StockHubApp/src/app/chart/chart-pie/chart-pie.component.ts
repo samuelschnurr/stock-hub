@@ -5,13 +5,14 @@ import { Component } from '@angular/core';
   templateUrl: './chart-pie.component.html'
 })
 export class ChartPieComponent {
+  public constructor() { }
 
-  public saleData = [
-    { name: "Mobiles", value: 105000 },
-    { name: "Laptop", value: 55000 },
-    { name: "AC", value: 15000 },
-    { name: "Headset", value: 150000 },
-    { name: "Fridge", value: 20000 }
+  // ToDo: Get values wie REST-Call and use service class
+  public dataSet = [
+    { name: 'Microsoft', value: 46 },
+    { name: 'Amazon', value: 14 },
+    { name: 'Bayer', value: 10 },
+    { name: 'Netflix', value: 14 },
+    { name: 'Danone', value: 16 }
   ];
-  constructor() { }
 }

@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
 import { StockService } from '../shared/stock.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Stock } from '../shared/stock.model';
 
 @Component({
   selector: 'app-stock-editor',
   templateUrl: './stock-editor.component.html'
 })
 export class StockEditorComponent {
-  stockForm = this.formBuilder.group({
-    name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
-    amount: ['', [Validators.required]],
-    acquisitionPricePerUnit: ['', [Validators.required]]
-  });
+  public stockForm: FormGroup;
 
-
-  public constructor(public stockService: StockService, private router: Router, private formBuilder: FormBuilder) { }
+  public constructor(public stockService: StockService, private router: Router, private formBuilder: FormBuilder) {
+    this.stockForm = this.formBuilder.group(new Stock());
+  }
 
   public onSubmit(): void {
     if (this.stockService.formData.id === 0) {

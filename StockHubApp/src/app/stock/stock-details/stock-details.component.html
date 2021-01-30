@@ -1,39 +1,49 @@
-<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+<form autocomplete="off" [formGroup]="stockForm" (ngSubmit)="onSubmit()">
   <input type="hidden" name="id" [value]="stockService.formData.id" />
+
   <div class="form-group">
     <label>Name</label>
     <input
+      type="text"
       class="form-control"
       placeholder="Name"
       name="name"
-      #name="ngModel"
-      [(ngModel)]="stockService.formData.name"
-      required [class.invalid]="name.invalid && name.touched"
-      minlength="3"
-      maxlength="50"
+      formControlName="name"
+      required
     />
   </div>
+  
   <div class="form-group">
     <label>Amount</label>
     <input
+      type="text"
       class="form-control"
-      placeholder="0,000"
+      placeholder="0,0000"
       name="amount"
-      #amount="ngModel"
-      [(ngModel)]="stockService.formData.amount"
+      formControlName="amount"
+      required
     />
   </div>
+
   <div class="form-group">
     <label>Acquisition price per Unit</label>
     <input
+      type="text"
       class="form-control"
-      placeholder="0,00"
+      placeholder="0,0000"
       name="acquisitionPricePerUnit"
-      #acquisitionPricePerUnit="ngModel"
-      [(ngModel)]="stockService.formData.acquisitionPricePerUnit"
+      formControlName="acquisitionPricePerUnit"
+      required
     />
   </div>
+
   <div class="form-group">
-    <button class="form-control btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+    <button
+      class="form-control btn btn-primary"
+      type="submit"
+      [disabled]="!stockForm.valid"
+    >
+      Submit
+    </button>
   </div>
 </form>

@@ -115,11 +115,17 @@ a:hover {
   border-color: #1976d2;
 }
 
-input.invalid {
-  border-color: red;
+/* #region Form Styles */
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
 }
 
-/* Responsive Styles */
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+/* #endregion Form Styles */
+
+/* #region Responsive Styles */
 @media screen and (max-width: 767px) {
   .card-container > *:not(.circle-link),
   .terminal {
@@ -135,3 +141,4 @@ input.invalid {
     margin-left: 72px;
   }
 }
+/* #endregion Responsive Styles */

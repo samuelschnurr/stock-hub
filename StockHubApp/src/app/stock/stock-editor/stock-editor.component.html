@@ -1,5 +1,5 @@
 <form autocomplete="off" [formGroup]="stockForm" (ngSubmit)="onSubmit()">
-  <input type="hidden" name="id" [value]="stockService.formData.id" />
+  <input type="hidden" formControlName="id" />
 
   <div class="form-group">
     <label>Name</label>

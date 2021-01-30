@@ -1,9 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { StockModule } from './stock/stock.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 import { PortfolioModule } from './portfolio/portfolio.module';
+import { StockModule } from './stock/stock.module';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,9 @@ import { PortfolioModule } from './portfolio/portfolio.module';
   imports: [
     BrowserModule,
     CoreModule,
-    StockModule,
-    PortfolioModule
+    SharedModule,
+    PortfolioModule,
+    StockModule
   ],
   providers: [],
   bootstrap: [AppComponent]

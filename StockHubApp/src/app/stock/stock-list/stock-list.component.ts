@@ -17,7 +17,7 @@ export class StockListComponent implements OnInit {
   public populateForm(selectedRecord: Stock): void {
     // Use Object.assign to not copy the reference to the list
     this.stockService.formData = Object.assign({}, selectedRecord);
-    this.router.navigate(['/stocks/new']);
+    this.router.navigate(['stocks/new']);
   }
 
   public onDelete(id: number): void {

@@ -13,44 +13,54 @@ export class StockEditorComponent {
 
   public constructor(public stockService: StockService, private router: Router, private formBuilder: FormBuilder) {
     this.stockForm = this.formBuilder.group(new Stock());
-  }
 
-  public onSubmit(): void {
-    if (this.stockService.formData.id === 0) {
-      //this.insertRecord(form);
-    } else {
-      //this.updateRecord(form);
+    if (this.stockService.formData.id !== 0) {
+      this.stockForm.patchValue(this.stockService.formData);
     }
   }
 
-  // private resetForm(form: NgForm): void {
-  //   form.form.reset();
-  //   this.stockService.formData = new Stock();
-  // }
+  public onSubmit(): void {
+    if (!this.stockForm.valid) {
+      return;
+    }
 
-  // private insertRecord(form: NgForm): void {
-  //   this.stockService.postStock().subscribe(
-  //     result => {
-  //       console.log('success');
-  //       this.resetForm(form);
-  //       this.router.navigate(['stocks']);
-  //     },
-  //     error => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
+    this.stockService.formData = this.stockForm.value;
 
-  // private updateRecord(form: NgForm): void {
-  //   this.stockService.updateStock().subscribe(
-  //     result => {
-  //       console.log('success');
-  //       this.resetForm(form);
-  //       this.router.navigate(['stocks']);
-  //     },
-  //     error => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
+    if (this.stockService.formData.id === 0) {
+      this.insertRecord();
+    } else {
+      this.updateRecord();
+    }
+  }
+
+  private resetForm(): void {
+    this.stockForm.reset();
+    this.stockService.formData = new Stock();
+  }
+
+  private insertRecord(): void {
+    this.stockService.postStock().subscribe(
+      result => {
+        console.log('success');
+        this.resetForm();
+        this.router.navigate(['stocks']);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
+
+  private updateRecord(): void {
+    this.stockService.updateStock().subscribe(
+      result => {
+        console.log('success');
+        this.resetForm();
+        this.router.navigate(['stocks']);
+      },
+      error => {
+        console.error(error);
+      }
+    );
+  }
 }

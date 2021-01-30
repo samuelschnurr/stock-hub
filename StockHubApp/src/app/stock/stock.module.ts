@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { StockDetailsComponent } from './stock-details/stock-details.component';
+import { StockEditorComponent } from './stock-editor/stock-editor.component';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { CoreModule } from '../core/core.module';
 
 @NgModule({
-  declarations: [StockDetailsComponent, StockListComponent],
+  declarations: [StockEditorComponent, StockListComponent],
   imports: [
     CommonModule,
     HttpClientModule,

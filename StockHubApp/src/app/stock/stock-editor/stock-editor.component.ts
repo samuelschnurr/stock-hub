@@ -4,10 +4,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-stock-details',
-  templateUrl: './stock-details.component.html'
+  selector: 'app-stock-editor',
+  templateUrl: './stock-editor.component.html'
 })
-export class StockDetailsComponent {
+export class StockEditorComponent {
   stockForm = this.formBuilder.group({
     name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
     amount: ['', [Validators.required]],

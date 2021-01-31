@@ -36,7 +36,10 @@ export class StockService {
   public refreshList(): Promise<void | Stock[]> {
     return this.httpClient.get(this.baseUrl)
       .toPromise()
-      .then(result => this.list = result as Stock[],
+      .then((result) => {
+        this.list = result as Stock[]
+        this.formData = new Stock();
+      },
         error => console.log(error));
   }
 }

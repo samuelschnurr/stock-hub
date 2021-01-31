@@ -1,49 +1,67 @@
-<form autocomplete="off" [formGroup]="stockForm" (ngSubmit)="onSubmit()">
-  <input type="hidden" formControlName="id" />
+<div class="row">
+  <div class="col-md-6">
+    <p>
+      <b><h2>Lorem Ipsum</h2></b>
+      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+      sit amet.
+    </p>
+  </div>
+  <div class="col-md-6">
+    <form autocomplete="off" [formGroup]="stockForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id" />
 
-  <div class="form-group">
-    <label>Name</label>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Name"
-      name="name"
-      formControlName="name"
-      required
-    />
-  </div>
-  
-  <div class="form-group">
-    <label>Amount</label>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="0,0000"
-      name="amount"
-      formControlName="amount"
-      required
-    />
-  </div>
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Name"
+          name="name"
+          formControlName="name"
+          required
+        />
+      </div>
 
-  <div class="form-group">
-    <label>Acquisition price per Unit</label>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="0,0000"
-      name="acquisitionPricePerUnit"
-      formControlName="acquisitionPricePerUnit"
-      required
-    />
-  </div>
+      <div class="form-group">
+        <label>Amount</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="0,0000"
+          name="amount"
+          formControlName="amount"
+          required
+        />
+      </div>
 
-  <div class="form-group">
-    <button
-      class="form-control btn btn-primary"
-      type="submit"
-      [disabled]="!stockForm.valid"
-    >
-      Submit
-    </button>
+      <div class="form-group">
+        <label>Acquisition price per Unit</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="0,0000"
+          name="acquisitionPricePerUnit"
+          formControlName="acquisitionPricePerUnit"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <button
+          class="form-control btn btn-primary"
+          type="submit"
+          [disabled]="!stockForm.valid"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
   </div>
-</form>
+</div>

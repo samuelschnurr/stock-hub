@@ -10,7 +10,6 @@ import { Stock } from '../../stock/shared/stock.model';
 export class PortfolioDashboardComponent implements OnInit {
   public title = 'StockHub';
   public chartData: any[] = [];
-  public chartView: [number, number] = [700, 400];
 
   public constructor(private portfolioService: PortfolioService) { }
 

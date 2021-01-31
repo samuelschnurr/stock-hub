@@ -1,6 +1,6 @@
 .content {
   display: flex;
-  margin: 128px auto 32px;
+  margin: 112px auto 64px;
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
@@ -116,11 +116,12 @@ a:hover {
 }
 
 /* #region Form Styles */
-.ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948; /* green */
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
 }
 
-.ng-invalid:not(form)  {
+.ng-invalid:not(form) {
   border-left: 5px solid #a94442; /* red */
 }
 /* #endregion Form Styles */

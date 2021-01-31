@@ -4,3 +4,9 @@ svg#rocket {
   left: -10px;
   top: -36px;
 }
+
+#pie-chart-parent {
+  display: grid;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}

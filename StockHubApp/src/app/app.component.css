@@ -1,5 +1,5 @@
 .circle-link {
-  color:black;
+  color: black;
 }
 
 .background {
@@ -22,4 +22,8 @@ footer {
 footer a {
   display: flex;
   align-items: center;
+}
+ 
+#routerOutlet {
+  width: 100%;
 }

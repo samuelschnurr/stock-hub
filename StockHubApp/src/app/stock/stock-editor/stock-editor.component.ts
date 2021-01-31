@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StockService } from '../shared/stock.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,12 +8,14 @@ import { Stock } from '../shared/stock.model';
   selector: 'app-stock-editor',
   templateUrl: './stock-editor.component.html'
 })
-export class StockEditorComponent {
+export class StockEditorComponent implements OnInit {
   public stockForm: FormGroup;
 
   public constructor(public stockService: StockService, private router: Router, private formBuilder: FormBuilder) {
     this.stockForm = this.formBuilder.group(new Stock());
+  }
 
+  ngOnInit(): void {
     if (this.stockService.formData.id !== 0) {
       this.stockForm.patchValue(this.stockService.formData);
     }

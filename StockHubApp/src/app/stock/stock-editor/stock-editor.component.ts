@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StockService } from '../shared/stock.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Stock } from '../shared/stock.model';
 
@@ -15,7 +15,7 @@ export class StockEditorComponent implements OnInit {
     this.stockForm = this.formBuilder.group(new Stock());
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     if (this.stockService.formData.id !== 0) {
       this.stockForm.patchValue(this.stockService.formData);
     }
@@ -33,6 +33,18 @@ export class StockEditorComponent implements OnInit {
     } else {
       this.updateRecord();
     }
+  }
+
+  public get name(): AbstractControl | null {
+    return this.stockForm.get('name');
+  }
+
+  public get amount(): AbstractControl | null {
+    return this.stockForm.get('amount');
+  }
+
+  public get acquisitionPricePerUnit(): AbstractControl | null {
+    return this.stockForm.get('acquisitionPricePerUnit');
   }
 
   private resetForm(): void {

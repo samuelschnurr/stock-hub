@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Stock } from './stock.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,6 @@ import { Observable } from 'rxjs';
 export class StockService {
   public formData: Stock = new Stock();
   public list: Stock[] = [];
-  private readonly baseUrl = 'https://localhost:44370/api/stock';
 
   /**
    * Initializes a new instance of the StockService class.
@@ -22,22 +22,22 @@ export class StockService {
    * @returns A observable object of the post response.
    */
   public postStock(): Observable<object> {
-    return this.httpClient.post(this.baseUrl, this.formData);
+    return this.httpClient.post(environment.apiUrlStock, this.formData);
   }
 
   public updateStock(): Observable<object> {
-    return this.httpClient.put(`${this.baseUrl}/${this.formData.id}`, this.formData);
+    return this.httpClient.put(`${environment.apiUrlStock}/${this.formData.id}`, this.formData);
   }
 
   public deleteStock(id: number): Observable<object> {
-    return this.httpClient.delete(`${this.baseUrl}/${id}`);
+    return this.httpClient.delete(`${environment.apiUrlStock}/${id}`);
   }
 
   public refreshList(): Promise<void | Stock[]> {
-    return this.httpClient.get(this.baseUrl)
+    return this.httpClient.get(environment.apiUrlStock)
       .toPromise()
       .then((result) => {
-        this.list = result as Stock[]
+        this.list = result as Stock[];
         this.formData = new Stock();
       },
         error => console.log(error));

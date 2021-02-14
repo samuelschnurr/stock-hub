@@ -55,7 +55,6 @@
           name="amount"
           formControlName="amount"
           required
-          S
         />
       </div>
 
@@ -88,7 +87,11 @@
         />
       </div>
 
-      <div *ngIf="acquisitionPricePerUnit?.dirty && acquisitionPricePerUnit?.touched">
+      <div
+        *ngIf="
+          acquisitionPricePerUnit?.dirty && acquisitionPricePerUnit?.touched
+        "
+      >
         <div
           *ngIf="acquisitionPricePerUnit?.errors?.required"
           class="alert alert-danger"
@@ -99,22 +102,35 @@
         <div
           *ngIf="
             acquisitionPricePerUnit?.errors?.min ||
-            acquisitionPricePerUnit?.errors?.max"
+            acquisitionPricePerUnit?.errors?.max
+          "
           class="alert alert-danger"
           role="alert"
         >
           Acquisition price per unit must be between 0.0001 and 9999,9999.9999.
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6">
+          <a
+            class="card w-100 ml-0"
+            rel="noopener"
+            routerLink="/stocks"
+            routerLinkActive="active"
+          >
+            <span>Cancel</span>
+          </a>
+        </div>
 
-      <div class="form-group">
-        <button
-          class="form-control btn btn-primary"
-          type="submit"
-          [disabled]="!stockForm.valid"
-        >
-          Submit
-        </button>
+        <div class="form-group col-md-6">
+          <button
+            class="form-control btn btn-primary"
+            type="submit"
+            [disabled]="!stockForm.valid"
+          >
+            Submit
+          </button>
+        </div>
       </div>
     </form>
   </div>

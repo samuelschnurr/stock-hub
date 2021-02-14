@@ -77,14 +77,19 @@
 
       <div class="form-group">
         <label>Acquisition price per unit</label>
-        <input
-          type="number"
-          class="form-control"
-          placeholder="0.0000"
-          name="acquisitionPricePerUnit"
-          formControlName="acquisitionPricePerUnit"
-          required
-        />
+        <div class="input-group">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="0.0000"
+            name="acquisitionPricePerUnit"
+            formControlName="acquisitionPricePerUnit"
+            required
+          />
+          <div class="input-group-append">
+            <span class="input-group-text">$</span>
+          </div>
+        </div>
       </div>
 
       <div

@@ -11,16 +11,29 @@ import { Stock } from '../shared/stock.model';
 export class StockEditorComponent implements OnInit {
   public stockForm: FormGroup;
 
+  /**
+   * Creates a new instance of StockEditor.
+   * @param stockService The via dependency injection loaded service for stock actions.
+   * @param router The via dependency injection loaded router for navigation actions.
+   * @param formBuilder The via dependency injection loaded formBuilder for setting up the editor.
+   */
   public constructor(public stockService: StockService, private router: Router, private formBuilder: FormBuilder) {
     this.stockForm = this.formBuilder.group(new Stock());
   }
 
+  /**
+   * Patches the values of the StockEditor with values of the record if it exists.
+   */
   public ngOnInit(): void {
     if (this.stockService.formData.id !== 0) {
       this.stockForm.patchValue(this.stockService.formData);
     }
   }
 
+  /**
+   * Submits the data of the stockForm and creates the record if its id is 0.
+   * If the id is not 0 an update action will be triggered.
+   */
   public onSubmit(): void {
     if (!this.stockForm.valid) {
       return;
@@ -35,14 +48,23 @@ export class StockEditorComponent implements OnInit {
     }
   }
 
+  /**
+   * Returns the name property of the StockForm.
+   */
   public get name(): AbstractControl | null {
     return this.stockForm.get('name');
   }
 
+  /**
+   * Returns the name amount of the StockForm.
+   */
   public get amount(): AbstractControl | null {
     return this.stockForm.get('amount');
   }
 
+  /**
+   * Returns the acquisitionPricePerUnit property of the StockForm.
+   */
   public get acquisitionPricePerUnit(): AbstractControl | null {
     return this.stockForm.get('acquisitionPricePerUnit');
   }

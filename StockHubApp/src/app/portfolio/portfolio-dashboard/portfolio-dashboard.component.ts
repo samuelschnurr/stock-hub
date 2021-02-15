@@ -8,11 +8,18 @@ import { Stock } from '../../stock/shared/stock.model';
   styleUrls: ['./portfolio-dashboard.css']
 })
 export class PortfolioDashboardComponent implements OnInit {
-  public title = 'StockHub';
+  /** The data which will be shown in the chart. */
   public chartData: any[] = [];
 
+  /**
+   * Creates a new instance of PortfolioDashbaord.
+   * @param portfolioService The via dependency injection loaded service for portfolio actions.
+   */
   public constructor(private portfolioService: PortfolioService) { }
 
+  /**
+   * Gets the Stock[] data from the backend and setups the portfolio chart with its values.
+   */
   ngOnInit(): void {
     this.portfolioService.getPortfolio()
       .then((result) => {

@@ -14,12 +14,20 @@ export class StockListComponent implements OnInit {
     this.stockService.refreshList();
   }
 
+  /**
+   * Populates a form to edit values of the currently selected record.
+   * @param selectedRecord The record of a Stock which values should be instantiated.
+   */
   public populateForm(selectedRecord: Stock): void {
     // Use Object.assign to not copy the reference to the list
     this.stockService.formData = Object.assign({}, selectedRecord);
     this.router.navigate(['stocks/new']);
   }
 
+  /**
+   * Deletes a record by a given id and refreshes the list component.
+   * @param id The id of the record which should be deleted.
+   */
   public onDelete(id: number): void {
     this.stockService.deleteStock(id).subscribe(
       result => {

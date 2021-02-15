@@ -1,27 +1,9 @@
-.circle-link {
-  color: black;
-}
-
 .background {
   position: fixed;
   bottom: 0px;
   left: -0px;
   z-index: -10;
   background: url(../assets/images/StockBackground.svg);
-}
-
-footer {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
-  flex-direction: column;
-}
-
-footer a {
-  display: flex;
-  align-items: center;
 }
 
 #routerOutlet {

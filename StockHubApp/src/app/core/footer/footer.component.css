@@ -1,0 +1,17 @@
+.circle-link {
+  color: black;
+}
+
+#footer {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+  flex-direction: column;
+}
+
+#footer a {
+  display: flex;
+  align-items: center;
+}

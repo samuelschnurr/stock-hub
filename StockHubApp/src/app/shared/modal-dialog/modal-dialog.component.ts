@@ -30,5 +30,5 @@ export class ModalDialogComponent {
    * The function which will be triggered if the the modal dialog is submitted.
    * Can be set from outside, otherwise it does no action.
    */
-  @Input() public submitModal: (() => void) | undefined;
+  @Input() public submitModal(): void {}
 }

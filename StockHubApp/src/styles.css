@@ -1,3 +1,5 @@
+/* #region Angular styles */
+
 .content {
   display: flex;
   margin: 112px auto 64px;
@@ -110,10 +112,27 @@ a:hover {
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* #endregion Angular styles */
+
+/* #region Bootstrap overrides */
+
 .btn-primary {
-  background-color: #1976d2;
-  border-color: #1976d2;
+  background-color: #1976d2 !important;
+  border-color: #1976d2 !important;
 }
+
+.btn-secondary {
+  border-color: #eee !important;
+  background-color: #fafafa !important;
+  fill: #888 !important;
+  color: #1976d2 !important;
+}
+
+.btn-secondary:hover {
+  color: #125699 !important;
+}
+
+/* #endregion Bootstrap override */
 
 /* #region Form Styles */
 

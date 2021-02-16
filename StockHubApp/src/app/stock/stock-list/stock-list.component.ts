@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Stock } from '../shared/stock.model';
 import { StockService } from '../shared/stock.service';
 
@@ -8,7 +9,14 @@ import { StockService } from '../shared/stock.service';
   templateUrl: './stock-list.component.html'
 })
 export class StockListComponent implements OnInit {
-  public constructor(public stockService: StockService, private router: Router) { }
+
+  /**
+   * Creates a new instance of the StockList class.
+   * @param stockService The via dependency injection loaded service for stock actions.
+   * @param toastrService The via dependency injection loaded service for showing toasts.
+   * @param router The via dependency injection loaded router for navigation actions.
+   */
+  public constructor(public stockService: StockService, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
     this.stockService.refreshList();
@@ -31,10 +39,12 @@ export class StockListComponent implements OnInit {
   public onDelete(id: number): void {
     this.stockService.deleteStock(id).subscribe(
       result => {
+        this.toastrService.success('Stock is deleted.');
         console.log('success');
         this.stockService.refreshList();
       },
       error => {
+        this.toastrService.error('Deleting stock failed.');
         console.error(error);
       }
     );

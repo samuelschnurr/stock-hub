@@ -3,6 +3,7 @@ import { StockService } from '../shared/stock.service';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Stock } from '../shared/stock.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-stock-editor',
@@ -14,10 +15,14 @@ export class StockEditorComponent implements OnInit {
   /**
    * Creates a new instance of StockEditor.
    * @param stockService The via dependency injection loaded service for stock actions.
+   * @param toastrService The via dependency injection loaded service for showing toasts.
    * @param router The via dependency injection loaded router for navigation actions.
    * @param formBuilder The via dependency injection loaded formBuilder for setting up the editor.
    */
-  public constructor(public stockService: StockService, private router: Router, private formBuilder: FormBuilder) {
+  public constructor(public stockService: StockService,
+                     private toastrService: ToastrService,
+                     private router: Router,
+                     private formBuilder: FormBuilder) {
     this.stockForm = this.formBuilder.group(new Stock());
   }
 
@@ -77,11 +82,13 @@ export class StockEditorComponent implements OnInit {
   private insertRecord(): void {
     this.stockService.postStock().subscribe(
       result => {
+        this.toastrService.success('Stock is created.');
         console.log('success');
         this.resetForm();
         this.router.navigate(['stocks']);
       },
       error => {
+        this.toastrService.error('Creating stock failed.');
         console.error(error);
       }
     );
@@ -90,11 +97,13 @@ export class StockEditorComponent implements OnInit {
   private updateRecord(): void {
     this.stockService.updateStock().subscribe(
       result => {
+        this.toastrService.success('Stock is updated.');
         console.log('success');
         this.resetForm();
         this.router.navigate(['stocks']);
       },
       error => {
+        this.toastrService.error('Updating stock failed.');
         console.error(error);
       }
     );

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from '../shared/portfolio.service';
 import { Stock } from '../../stock/shared/stock.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-portfolio-dashboard',
@@ -14,8 +15,9 @@ export class PortfolioDashboardComponent implements OnInit {
   /**
    * Creates a new instance of PortfolioDashbaord.
    * @param portfolioService The via dependency injection loaded service for portfolio actions.
+   * @param toastrService The via dependency injection loaded service for showing toasts.
    */
-  public constructor(private portfolioService: PortfolioService) { }
+  public constructor(private portfolioService: PortfolioService, private toastrService: ToastrService) { }
 
   /**
    * Gets the Stock[] data from the backend and setups the portfolio chart with its values.
@@ -26,7 +28,10 @@ export class PortfolioDashboardComponent implements OnInit {
         console.log('success');
         this.chartData = this.createChartData(result as Stock[]);
       },
-        error => console.log(error));
+        error => {
+          this.toastrService.error('Loading portfolio failed.');
+          console.log(error);
+        });
   }
 
   private createChartData(stocks: Stock[]): any[] {

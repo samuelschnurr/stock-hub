@@ -3,6 +3,7 @@ import { Stock } from './stock.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,9 @@ export class StockService {
   /**
    * Creates a new instance of the StockService class.
    * @param httpClient The via dependency injection loaded HttpClient.
+   * @param toastrService The via dependency injection loaded service for showing toasts.
    */
-  public constructor(private httpClient: HttpClient) { }
+  public constructor(private httpClient: HttpClient, private toastrService: ToastrService) { }
 
   /**
    * Posts the formData to the backend.
@@ -54,6 +56,9 @@ export class StockService {
         this.list = result as Stock[];
         this.formData = new Stock();
       },
-        error => console.log(error));
+        error => {
+          this.toastrService.error('Loading stocks failed.');
+          console.log(error);
+        });
   }
 }

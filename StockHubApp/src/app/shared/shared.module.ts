@@ -5,9 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ToastrModule } from 'ngx-toastr';
+import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ModalDialogComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -24,7 +25,8 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    ToastrModule
+    ToastrModule,
+    ModalDialogComponent
   ]
 })
 export class SharedModule { }

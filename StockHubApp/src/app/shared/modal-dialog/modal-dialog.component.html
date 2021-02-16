@@ -24,7 +24,13 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           {{ cancelLabel }}
         </button>
-        <button type="button" class="btn btn-primary" (click)="submitModal()">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#customModal"
+          (click)="submitModal()"
+        >
           {{ submitLabel }}
         </button>
       </div>

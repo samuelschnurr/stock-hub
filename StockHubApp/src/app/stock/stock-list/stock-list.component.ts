@@ -9,6 +9,16 @@ import { StockService } from '../shared/stock.service';
   templateUrl: './stock-list.component.html'
 })
 export class StockListComponent implements OnInit {
+  /** The id of the record which opened the modal dialog. */
+  public modalId = 0;
+  /** The title of the modal dialog. */
+  public modalTitle = 'Confirm action';
+  /** The body of the modal dialog. */
+  public modalBody = 'Do you want to delete this stock?';
+  /** The label of the cancel button of the modal dialog. */
+  public modalCancelLabel = 'Cancel';
+  /** The label of the submit button of the modal dialog. */
+  public modalSubmitLabel = 'Delete';
 
   /**
    * Creates a new instance of the StockList class.
@@ -33,10 +43,19 @@ export class StockListComponent implements OnInit {
   }
 
   /**
-   * Deletes a record by a given id and refreshes the list component.
-   * @param id The id of the record which should be deleted.
+   * Is fired when user clicked on the delete icon of a stock.
+   * Stores the selected id in a local variable for further processing.
+   * @param id The number of the record which is selected for deletion.
    */
   public onDelete(id: number): void {
+    this.modalId = id;
+  }
+
+  /**
+   * Deletes a record by a given id and refreshes the list component after the moda dialog is submitted.
+   * @param id The id which is emitted by the modal dialog at submit.
+   */
+  public submitModal(id: number): void {
     this.stockService.deleteStock(id).subscribe(
       result => {
         this.toastrService.success('Stock is deleted.');

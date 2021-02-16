@@ -26,7 +26,11 @@
       <td (click)="populateForm(stock)" class="text-right">
         {{ stock.acquisitionPricePerUnit }}
       </td>
-      <td (click)="onDelete(stock.id)">
+      <td
+        (click)="onDelete(stock.id)"
+        data-toggle="modal"
+        data-target="#customModal"
+      >
         <svg width="16" height="16">
           <use xlink:href="assets/bootstrap-icons/bootstrap-icons.svg#trash" />
         </svg>
@@ -34,3 +38,12 @@
     </tr>
   </tbody>
 </table>
+
+<app-modal-dialog
+  [id]="modalId"
+  [title]="modalTitle"
+  [body]="modalBody"
+  [cancelLabel]="modalCancelLabel"
+  [submitLabel]="modalSubmitLabel"
+  (idSubmitEvent)="submitModal($event)"
+></app-modal-dialog>

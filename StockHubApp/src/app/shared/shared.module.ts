@@ -5,6 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
 
+/**
+ * The shared module provides global access to a set of common used implementations.
+ */
 @NgModule({
   declarations: [ModalDialogComponent],
   imports: [

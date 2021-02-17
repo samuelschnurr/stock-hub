@@ -9,7 +9,9 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class StockService {
+  /** The formData of a Stock. Used for creating and updating Stock data.  */
   public formData: Stock = new Stock();
+  /** A list which contains all stocks in the database. */
   public list: Stock[] = [];
 
   /**

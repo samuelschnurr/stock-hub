@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from '../shared/shared.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -15,11 +16,12 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
-    })
+    }),
+    SharedModule
   ],
   exports: [
     NavBarComponent,
-    FooterComponent,
+    FooterComponent
   ]
 })
 export class CoreModule { }

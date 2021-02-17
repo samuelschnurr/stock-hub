@@ -29,7 +29,7 @@ export class PortfolioDashboardComponent implements OnInit {
         this.chartData = this.createChartData(result as Stock[]);
       },
         error => {
-          this.toastrService.error('Loading portfolio failed.');
+          this.toastrService.error($localize`Loading portfolio failed.`);
           console.log(error);
         });
   }

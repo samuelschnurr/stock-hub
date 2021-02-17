@@ -13,6 +13,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "de": "src/locale/messages.de.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -22,6 +28,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "i18nMissingTranslation": "error",
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -69,6 +76,9 @@
                   "maximumError": "4kb"
                 }
               ]
+            },
+            "de": {
+              "localize": ["de"]
             }
           }
         },
@@ -80,6 +90,9 @@
           "configurations": {
             "production": {
               "browserTarget": "StockHubApp:build:production"
+            },
+            "de": {
+              "browserTarget": "StockHubApp:build:de"
             }
           }
         },

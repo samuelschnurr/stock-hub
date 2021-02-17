@@ -83,13 +83,13 @@ export class StockEditorComponent implements OnInit {
   private insertRecord(): void {
     this.stockService.postStock().subscribe(
       result => {
-        this.toastrService.success('Stock is created.');
+        this.toastrService.success($localize`Stock is created.`);
         console.log('success');
         this.resetForm();
         this.router.navigate(['stocks']);
       },
       error => {
-        this.toastrService.error('Creating stock failed.');
+        this.toastrService.error($localize`Creating stock failed.`);
         console.error(error);
       }
     );
@@ -98,13 +98,13 @@ export class StockEditorComponent implements OnInit {
   private updateRecord(): void {
     this.stockService.updateStock().subscribe(
       result => {
-        this.toastrService.success('Stock is updated.');
+        this.toastrService.success($localize`Stock is updated.`);
         console.log('success');
         this.resetForm();
         this.router.navigate(['stocks']);
       },
       error => {
-        this.toastrService.error('Updating stock failed.');
+        this.toastrService.error($localize`Updating stock failed.`);
         console.error(error);
       }
     );

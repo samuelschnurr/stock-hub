@@ -59,7 +59,7 @@ export class StockService {
         this.formData = new Stock();
       },
         error => {
-          this.toastrService.error('Loading stocks failed.');
+          this.toastrService.error($localize`Loading stocks failed.`);
           console.log(error);
         });
   }

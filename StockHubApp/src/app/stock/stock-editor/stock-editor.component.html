@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6">
     <p>
-      <b><h2>Lorem Ipsum</h2></b>
+      <b><h2 i18n>Lorem Ipsum</h2></b>
       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
       eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
       voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
@@ -18,7 +18,7 @@
       <input type="hidden" formControlName="id" />
 
       <div class="form-group">
-        <label>Name</label>
+        <label i18n>Name</label>
         <input
           type="text"
           class="form-control"
@@ -31,6 +31,7 @@
 
       <div *ngIf="name?.dirty && name?.touched">
         <div
+          i18n
           *ngIf="name?.errors?.required"
           class="alert alert-danger"
           role="alert"
@@ -38,6 +39,7 @@
           Name is required.
         </div>
         <div
+          i18n
           *ngIf="name?.errors?.minlength || name?.errors?.maxlength"
           class="alert alert-danger"
           role="alert"
@@ -47,7 +49,7 @@
       </div>
 
       <div class="form-group">
-        <label>Amount</label>
+        <label i18n>Amount</label>
         <input
           type="number"
           class="form-control"
@@ -60,6 +62,7 @@
 
       <div *ngIf="amount?.dirty && amount?.touched">
         <div
+          i18n
           *ngIf="amount?.errors?.required"
           class="alert alert-danger"
           role="alert"
@@ -67,6 +70,7 @@
           Amount is required.
         </div>
         <div
+          i18n
           *ngIf="amount?.errors?.min || amount?.errors?.max"
           class="alert alert-danger"
           role="alert"
@@ -76,7 +80,7 @@
       </div>
 
       <div class="form-group">
-        <label>Acquisition price per unit</label>
+        <label i18n>Acquisition price per unit</label>
         <div class="input-group">
           <input
             type="number"
@@ -98,6 +102,7 @@
         "
       >
         <div
+          i18n
           *ngIf="acquisitionPricePerUnit?.errors?.required"
           class="alert alert-danger"
           role="alert"
@@ -105,6 +110,7 @@
           Acquisition price per unit is required.
         </div>
         <div
+          i18n
           *ngIf="
             acquisitionPricePerUnit?.errors?.min ||
             acquisitionPricePerUnit?.errors?.max
@@ -118,6 +124,7 @@
       <div class="row">
         <div class="form-group col-md-6">
           <button
+            i18n
             type="button"
             class="btn btn-secondary w-100"
             routerLink="/stocks"
@@ -129,6 +136,7 @@
 
         <div class="form-group col-md-6">
           <button
+            i18n
             class="form-control btn btn-primary"
             type="submit"
             [disabled]="!stockForm.valid"

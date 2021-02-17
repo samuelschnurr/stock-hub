@@ -11,14 +11,8 @@ import { StockService } from '../shared/stock.service';
 export class StockListComponent implements OnInit {
   /** The id of the record which opened the modal dialog. */
   public modalId = 0;
-  /** The title of the modal dialog. */
-  public modalTitle = 'Confirm action';
   /** The body of the modal dialog. */
-  public modalBody = 'Do you want to delete this stock?';
-  /** The label of the cancel button of the modal dialog. */
-  public modalCancelLabel = 'Cancel';
-  /** The label of the submit button of the modal dialog. */
-  public modalSubmitLabel = 'Delete';
+  public modalBody = $localize`Do you want to delete this stock?`;
 
   /**
    * Creates a new instance of the StockList class.
@@ -58,12 +52,12 @@ export class StockListComponent implements OnInit {
   public submitModal(id: number): void {
     this.stockService.deleteStock(id).subscribe(
       result => {
-        this.toastrService.success('Stock is deleted.');
+        this.toastrService.success($localize`Stock is deleted.`);
         console.log('success');
         this.stockService.refreshList();
       },
       error => {
-        this.toastrService.error('Deleting stock failed.');
+        this.toastrService.error($localize`Deleting stock failed.`);
         console.error(error);
       }
     );

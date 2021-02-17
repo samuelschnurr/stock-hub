@@ -1,4 +1,5 @@
 <button
+  i18n
   type="button"
   class="btn btn-secondary float-right w-25 mb-3"
   routerLink="new"
@@ -13,9 +14,9 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Amount</th>
-      <th scope="col" class="text-right">Acquisition price per unit</th>
+      <th i18n scope="col">Name</th>
+      <th i18n scope="col">Amount</th>
+      <th i18n scope="col" class="text-right">Acquisition price per unit</th>
       <th></th>
     </tr>
   </thead>
@@ -41,9 +42,6 @@
 
 <app-modal-dialog
   [id]="modalId"
-  [title]="modalTitle"
   [body]="modalBody"
-  [cancelLabel]="modalCancelLabel"
-  [submitLabel]="modalSubmitLabel"
   (idSubmitEvent)="submitModal($event)"
 ></app-modal-dialog>

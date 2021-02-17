@@ -1,7 +1,249 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
-    <body>     
+    <body>
+      <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
+        <source>Dashboard</source>
+        <target>Übersicht</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8bbe5db3e351356b09093540ba6049fb1a4025f7" datatype="html">
+        <source>Stocks</source>
+        <target>Aktien</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/nav-bar/nav-bar.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d2c2e866e54d227cfc62a2ffb75aab14ef4835f1" datatype="html">
+        <source>Lorem Ipsum</source>
+        <target>Lorem Ipsum in deutsch</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/portfolio/portfolio-dashboard/portfolio-dashboard.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4003613260496506799" datatype="html">
+        <source>Loading portfolio failed.</source>
+        <target>Portfolio abrufen fehlgeschlagen.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/portfolio/portfolio-dashboard/portfolio-dashboard.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="316691784795579856" datatype="html">
+        <source>Confirmation required</source>
+        <target>Bestätigung erforderlich</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/modal-dialog/modal-dialog.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3096179021751282547" datatype="html">
+        <source>Do you want to submit this action?</source>
+        <target>Soll diese Aktion ausgeführt werden?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/modal-dialog/modal-dialog.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2159130950882492111" datatype="html">
+        <source>Cancel</source>
+        <target>Abbrechen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/modal-dialog/modal-dialog.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="935187492052582731" datatype="html">
+        <source>Submit</source>
+        <target>Bestätigen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/modal-dialog/modal-dialog.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5342439134267658588" datatype="html">
+        <source>Loading stocks failed.</source>
+        <target>Aktien abrufen fehlgeschlagen.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/shared/stock.service.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-list/stock-list.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a6304500515fd50130342006ddd212725f7d34b3" datatype="html">
+        <source> Name is required. </source>
+        <target>Name ist erforderlich.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed12bfe03511509e32708b6723cd29a33b34947c" datatype="html">
+        <source> Name must be between 3 and 50 characters. </source>
+        <target>Der Name muss zwischen 3 und 50 Zeichen lang sein.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">47,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dfc2fb58e2a04ed944a4bd80f0a2087775134068" datatype="html">
+        <source>Amount</source>
+        <target>Menge</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-list/stock-list.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d37f7a71a120c01fddf880cd1781fd402b4ab04f" datatype="html">
+        <source> Amount is required. </source>
+        <target>Menge ist erforderlich.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">70,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e1cc06780588005d5a35221cb2dec47b2feab8a0" datatype="html">
+        <source> Amount must be between 0.0001 and 9,9999,9999,9999.9999. </source>
+        <target>Die Menge muss zwischen 0.0001 und 9,9999,9999,9999.9999 liegen.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">78,79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="092e5cf1d25d3288761bd82a7f176826a362294c" datatype="html">
+        <source>Acquisition price per unit</source>
+        <target>Einstandspreis pro Einheit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-list/stock-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="858c7f55c09e1dc9d22381556f5a2b35dc5583f6" datatype="html">
+        <source> Acquisition price per unit is required. </source>
+        <target>Einstandspreis pro Einheit ist erforderlich.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">110,111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="59d66e9007e649f46b8f8a84d0566ae43ccfd83c" datatype="html">
+        <source> Acquisition price per unit must be between 0.0001 and 9999,9999.9999. </source>
+        <target>Einstandspreis pro Einheit muss zwischen 0.0001 und 9999,9999.9999 liegen.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">121,122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="17a9d3860d9ad593dd09a9f934e03999d9e76a7a" datatype="html">
+        <source> Cancel </source>
+        <target>Abbrechen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">133,134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="425ff0c8b460391d1d47b96754e84ab6f2df54de" datatype="html">
+        <source> Submit </source>
+        <target>Bestätigen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.html</context>
+          <context context-type="linenumber">144,145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8587549229316339041" datatype="html">
+        <source>Stock is created.</source>
+        <target>Aktien wurde erstellt.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1909135461226138801" datatype="html">
+        <source>Creating stock failed.</source>
+        <target>Erstellen der Aktie fehlgeschlagen.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.ts</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7431841588498211725" datatype="html">
+        <source>Stock is updated.</source>
+        <target>Aktie wurde aktualisiert.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.ts</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6759721033087425608" datatype="html">
+        <source>Updating stock failed.</source>
+        <target>Aktualisieren der Aktie fehlgeschlagen.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-editor/stock-editor.component.ts</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bcc4e9287ae91ee99db0891879d358f0ae7eeb86" datatype="html">
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg width=&quot;24&quot; height=&quot;24&quot;&gt;"/><x id="START_TAG__SVG_USE" ctype="x-_svg_use" equiv-text="&lt;use xlink:href=&quot;assets/bootstrap-icons/bootstrap-icons.svg#plus&quot; /&gt;"/><x id="CLOSE_TAG__SVG_USE" ctype="x-_svg_use" equiv-text="&lt;use xlink:href=&quot;assets/bootstrap-icons/bootstrap-icons.svg#plus&quot; /&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;
+  "/> Add new
+</source>
+<target>Anlegen</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-list/stock-list.component.html</context>
+          <context context-type="linenumber">8,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3682118493548016182" datatype="html">
+        <source>Do you want to delete this stock?</source>
+        <target>Möchten Sie diese Aktie löschen?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-list/stock-list.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8210833552231356120" datatype="html">
+        <source>Stock is deleted.</source>
+        <target>Aktie wurde gelöscht.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-list/stock-list.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3637642146025274475" datatype="html">
+        <source>Deleting stock failed.</source>
+        <target>Löschen der Aktie fehlgeschlagen.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/stock/stock-list/stock-list.component.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>

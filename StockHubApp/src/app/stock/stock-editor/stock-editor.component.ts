@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './stock-editor.component.html'
 })
 export class StockEditorComponent implements OnInit {
+  /** The form to create or update a Stock. */
   public stockForm: FormGroup;
 
   /**

@@ -1,27 +1,5 @@
 /* #region Angular styles */
 
-.content {
-  display: flex;
-  margin: 112px auto 64px;
-  padding: 0 16px;
-  max-width: 960px;
-  flex-direction: column;
-  align-items: center;
-}
-
-svg.material-icons {
-  height: 24px;
-  width: auto;
-}
-
-svg.material-icons:not(:last-child) {
-  margin-right: 8px;
-}
-
-.card svg.material-icons path {
-  fill: #888;
-}
-
 .card-container {
   display: flex;
   flex-wrap: wrap;

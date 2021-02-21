@@ -7,8 +7,7 @@
 
 #routerOutlet {
   width: 100%;
-  display: flex;
-  margin: 112px auto 64px;
+  margin: auto;
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;

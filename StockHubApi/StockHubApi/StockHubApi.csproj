@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DocumentationFile>bin\Debug\net5.0\StockHubApi.xml</DocumentationFile>
     <OutputPath>bin\Debug\net5.0\</OutputPath>
   </PropertyGroup>

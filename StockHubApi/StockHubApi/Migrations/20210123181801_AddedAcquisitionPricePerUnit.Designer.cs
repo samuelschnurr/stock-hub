@@ -12,6 +12,7 @@ namespace StockHubApi.Migrations
     [Migration("20210123181801_AddedAcquisitionPricePerUnit")]
     partial class AddedAcquisitionPricePerUnit
     {
+        /// <inheritdoc/>
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618

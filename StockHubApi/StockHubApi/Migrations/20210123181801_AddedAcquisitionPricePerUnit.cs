@@ -2,8 +2,10 @@
 
 namespace StockHubApi.Migrations
 {
+    /// <inheritdoc />
     public partial class AddedAcquisitionPricePerUnit : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
@@ -31,6 +33,7 @@ namespace StockHubApi.Migrations
                 defaultValue: 0m);
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(

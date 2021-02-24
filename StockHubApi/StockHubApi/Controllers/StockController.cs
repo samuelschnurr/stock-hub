@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using StockHubApi.Models;
 using StockHubApi.Services;
 
@@ -19,7 +18,7 @@ namespace StockHubApi.Controllers
         /// The default constructor for creating a new instance of <see cref="StockController" />.
         /// </summary>
         /// <param name="stockService">The via dependency injection loaded <see cref="stockService" />.</param>
-        public StockController(StockService stockService, ILogger<StockService> logger)
+        public StockController(StockService stockService)
         {
             this.stockService = stockService;
         }

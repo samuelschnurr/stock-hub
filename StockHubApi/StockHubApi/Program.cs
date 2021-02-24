@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace StockHubApi
 {
@@ -23,8 +24,17 @@ namespace StockHubApi
         /// </summary>
         /// <param name="args">Arguments which can be passed via cli for additional configuration of the <see cref="IHostBuilder"/>.</param>
         /// <returns>A new and configured instance of <see cref="IHostBuilder"/>.</returns>
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            return Host.CreateDefaultBuilder(args)
+                .ConfigureLogging(logging =>
+                {
+                    logging.ClearProviders();
+#if DEBUG
+                    logging.AddDebug();
+#endif
+                })
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
+        }
     }
 }

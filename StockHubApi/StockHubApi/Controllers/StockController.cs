@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using StockHubApi.Models;
 using StockHubApi.Services;
-using System.Collections.Generic;
 
 namespace StockHubApi.Controllers
 {
@@ -15,18 +16,18 @@ namespace StockHubApi.Controllers
         private readonly StockService stockService;
 
         /// <summary>
-        /// The default constructor for creating a new instance of <see cref="StockController"/>.
+        /// The default constructor for creating a new instance of <see cref="StockController" />.
         /// </summary>
-        /// <param name="stockService">The via dependency injection loaded <see cref="stockService"/>.</param>
-        public StockController(StockService stockService)
+        /// <param name="stockService">The via dependency injection loaded <see cref="stockService" />.</param>
+        public StockController(StockService stockService, ILogger<StockService> logger)
         {
             this.stockService = stockService;
         }
 
         /// <summary>
-        /// Retreives all <see cref="Stock"/>s.
+        /// Retreives all <see cref="Stock" />s.
         /// </summary>
-        /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="Stock"/>.</returns>
+        /// <returns>An <see cref="IEnumerable{T}" /> of <see cref="Stock" />.</returns>
         [HttpGet]
         public IEnumerable<Stock> Index()
         {
@@ -34,10 +35,10 @@ namespace StockHubApi.Controllers
         }
 
         /// <summary>
-        /// Retreives a single <see cref="Stock"/> by a given id.
+        /// Retreives a single <see cref="Stock" /> by a given id.
         /// </summary>
-        /// <param name="id">The id of the a <see cref="Stock"/> which will be retreived.</param>
-        /// <returns>A <see cref="Stock"/> by the given id.</returns>
+        /// <param name="id">The id of the a <see cref="Stock" /> which will be retreived.</param>
+        /// <returns>A <see cref="Stock" /> by the given id.</returns>
         [HttpGet("{id}")]
         public Stock Show(int id)
         {
@@ -45,9 +46,9 @@ namespace StockHubApi.Controllers
         }
 
         /// <summary>
-        /// Creates a single <see cref="Stock"/>.
+        /// Creates a single <see cref="Stock" />.
         /// </summary>
-        /// <param name="stock">A instance of a <see cref="Stock"/> which contains which will be created.</param>
+        /// <param name="stock">A instance of a <see cref="Stock" /> which contains which will be created.</param>
         [HttpPost]
         public void Create(Stock stock)
         {
@@ -55,9 +56,9 @@ namespace StockHubApi.Controllers
         }
 
         /// <summary>
-        /// Updates a single <see cref="Stock"/>.
+        /// Updates a single <see cref="Stock" />.
         /// </summary>
-        /// <param name="stock">A instance of a <see cref="Stock"/> which will be updated with the given values.</param>
+        /// <param name="stock">A instance of a <see cref="Stock" /> which will be updated with the given values.</param>
         [HttpPut("{id}")]
         public void Update(Stock stock)
         {
@@ -65,9 +66,9 @@ namespace StockHubApi.Controllers
         }
 
         /// <summary>
-        /// Deletes a single <see cref="Stock"/>.
+        /// Deletes a single <see cref="Stock" />.
         /// </summary>
-        /// <param name="id">The id of the a <see cref="Stock"/> which will be deleted.</param>
+        /// <param name="id">The id of the a <see cref="Stock" /> which will be deleted.</param>
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

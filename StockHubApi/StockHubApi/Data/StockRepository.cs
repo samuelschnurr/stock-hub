@@ -1,6 +1,6 @@
-﻿using StockHubApi.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using StockHubApi.Models;
 
 namespace StockHubApi.Data
 {
@@ -43,10 +43,12 @@ namespace StockHubApi.Data
         /// Creates a single <see cref="Stock"/> and persists the changes.
         /// </summary>
         /// <param name="stock">The <see cref="Stock"/> which will be created.</param>
-        public void CreateStock(Stock stock)
+        /// <returns>The created <see cref="Stock" /> with it database id, or null if it was not created.</returns>
+        public Stock CreateStock(Stock stock)
         {
             dbContext.Stocks.Add(stock);
             dbContext.SaveChanges();
+            return stock;
         }
 
         /// <summary>
@@ -65,7 +67,7 @@ namespace StockHubApi.Data
         /// <param name="id">The id of the <see cref="Stock"/> which will be deleted with the given values.</param>
         public void DeleteStock(int id)
         {
-            dbContext.Stocks.Remove(new Stock() {Id = id});
+            dbContext.Stocks.Remove(new Stock {Id = id});
             dbContext.SaveChanges();
         }
     }

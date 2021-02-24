@@ -25,10 +25,11 @@ public class ExceptionFilter : IExceptionFilter
         string message;
 
         var exceptionType = context.Exception.GetType();
-        if (exceptionType == typeof(UnauthorizedAccessException))
+
+        if (exceptionType == typeof(BadHttpRequestException))
         {
-            message = "Unauthorized Access";
-            status = HttpStatusCode.Unauthorized;
+            message = "Bad request.";
+            status = HttpStatusCode.BadRequest;
         }
         else if (exceptionType == typeof(NotImplementedException))
         {

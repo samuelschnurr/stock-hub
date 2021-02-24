@@ -1,6 +1,6 @@
-﻿using StockHubApi.Data;
+﻿using System.Collections.Generic;
+using StockHubApi.Data;
 using StockHubApi.Models;
-using System.Collections.Generic;
 
 namespace StockHubApi.Services
 {
@@ -43,9 +43,10 @@ namespace StockHubApi.Services
         /// Creates a single <see cref="Stock"/>.
         /// </summary>
         /// <param name="stock">A instance of a <see cref="Stock"/> which contains which will be created.</param>
-        public void CreateStock(Stock stock)
+        /// <returns>The created <see cref="Stock" /> with it database id, or null if it was not created.</returns>
+        public Stock CreateStock(Stock stock)
         {
-            stockRepository.CreateStock(stock);
+            return stockRepository.CreateStock(stock);
         }
 
         /// <summary>

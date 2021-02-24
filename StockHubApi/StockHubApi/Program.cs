@@ -31,7 +31,7 @@ namespace StockHubApi
                 {
                     logging.ClearProviders();
 #if DEBUG
-                    logging.AddDebug();
+                    logging.AddConsole();
 #endif
                 })
                 .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });

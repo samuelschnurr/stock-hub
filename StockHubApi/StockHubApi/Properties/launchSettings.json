@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "stockhub",
+      "launchUrl": "api",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "StockHub.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "stockhub",
+      "launchUrl": "api",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

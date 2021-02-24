@@ -94,15 +94,7 @@ namespace StockHubApi.Controllers
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Delete))]
         public IActionResult Delete(int id)
         {
-            Stock databaseStock = stockService.GetStock(id);
-
-            if (databaseStock == null)
-            {
-                return NotFound();
-            }
-
             stockService.DeleteStock(id);
-
             return Ok();
         }
     }

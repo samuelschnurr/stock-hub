@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using StockHubApi.Interfaces;
 using StockHubApi.Models;
 
@@ -35,12 +36,22 @@ namespace StockHubApi.Services
         /// <inheritdoc/>
         public Stock CreateStock(Stock stock)
         {
+            if (stock == null)
+            {
+                throw new ArgumentNullException(nameof(stock));
+            }
+
             return stockRepository.CreateStock(stock);
         }
 
         /// <inheritdoc/>
         public void UpdateStock(Stock stock)
         {
+            if (stock == null)
+            {
+                throw new ArgumentNullException(nameof(stock));
+            }
+
             stockRepository.UpdateStock(stock);
         }
 

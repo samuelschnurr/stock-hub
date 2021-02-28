@@ -13,7 +13,7 @@ namespace StockHubApi.Tests
     /// Class for testing the service layer used by <see cref="Stock"/>s.
     /// </summary>
     [TestFixture(Author = "Samuel Schnurr")]
-    public class StockServiceTest
+    public class StockServiceTests
     {
         private readonly Mock<IStockRepository> mockStockRepository = new();
         private IStockService stockService;

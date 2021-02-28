@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using StockHubApi.Interfaces;
 using StockHubApi.Models;
 
 namespace StockHubApi.Data
@@ -7,7 +8,7 @@ namespace StockHubApi.Data
     /// <summary>
     /// A repository which provides CRUD-operations for <see cref="Stock"/>s.
     /// </summary>
-    public class StockRepository
+    public class StockRepository : IStockRepository
     {
         private readonly StockHubDbContext dbContext;
 
@@ -20,30 +21,19 @@ namespace StockHubApi.Data
             this.dbContext = dbContext;
         }
 
-        /// <summary>
-        /// Retreives all <see cref="Stock"/>s.
-        /// </summary>
-        /// <returns>All <see cref="IEnumerable{T}"/> of <see cref="Stock"/>s.</returns>
+        /// <inheritdoc/>
         public IEnumerable<Stock> GetStocks()
         {
             return dbContext.Stocks;
         }
 
-        /// <summary>
-        /// Retreives a single <see cref="Stock"/> by a given id.
-        /// </summary>
-        /// <param name="id">The id of the a <see cref="Stock"/> which will be retreived.</param>
-        /// <returns>A <see cref="Stock"/> by the given id.</returns>
+        /// <inheritdoc/>
         public Stock GetStock(int id)
         {
             return dbContext.Stocks.Single(s => s.Id == id);
         }
 
-        /// <summary>
-        /// Creates a single <see cref="Stock"/> and persists the changes.
-        /// </summary>
-        /// <param name="stock">The <see cref="Stock"/> which will be created.</param>
-        /// <returns>The created <see cref="Stock" /> with it database id, or null if it was not created.</returns>
+        /// <inheritdoc/>
         public Stock CreateStock(Stock stock)
         {
             dbContext.Stocks.Add(stock);
@@ -51,20 +41,14 @@ namespace StockHubApi.Data
             return stock;
         }
 
-        /// <summary>
-        /// Updates a single <see cref="Stock"/> and persists the changes.
-        /// </summary>
-        /// <param name="stock">The <see cref="Stock"/> which will be updated with the given values.</param>
+        /// <inheritdoc/>
         public void UpdateStock(Stock stock)
         {
             dbContext.Stocks.Update(stock);
             dbContext.SaveChanges();
         }
 
-        /// <summary>
-        /// Deletes a single <see cref="Stock"/> and persists the changes.
-        /// </summary>
-        /// <param name="id">The id of the <see cref="Stock"/> which will be deleted with the given values.</param>
+        /// <inheritdoc/>
         public void DeleteStock(int id)
         {
             dbContext.Stocks.Remove(new Stock {Id = id});

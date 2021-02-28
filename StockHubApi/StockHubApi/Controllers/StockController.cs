@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using StockHubApi.Interfaces;
 using StockHubApi.Models;
 using StockHubApi.Services;
 
@@ -12,7 +13,7 @@ namespace StockHubApi.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class StockController : ControllerBase
+    public class StockController : ControllerBase, IStockController
     {
         private readonly StockService stockService;
 
@@ -25,10 +26,7 @@ namespace StockHubApi.Controllers
             this.stockService = stockService;
         }
 
-        /// <summary>
-        /// Retreives all <see cref="Stock" />s.
-        /// </summary>
-        /// <returns>An <see cref="IEnumerable{T}" /> of <see cref="Stock" />.</returns>
+        /// <inheritdoc/>
         [HttpGet]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         public IActionResult Index()
@@ -43,11 +41,7 @@ namespace StockHubApi.Controllers
             return Ok(stocks);
         }
 
-        /// <summary>
-        /// Retreives a single <see cref="Stock" /> by a given id.
-        /// </summary>
-        /// <param name="id">The id of the a <see cref="Stock" /> which will be retreived.</param>
-        /// <returns>A <see cref="Stock" /> by the given id.</returns>
+        /// <inheritdoc/>
         [HttpGet("{id}")]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         public IActionResult Show(int id)
@@ -62,10 +56,7 @@ namespace StockHubApi.Controllers
             return Ok(stock);
         }
 
-        /// <summary>
-        /// Creates a single <see cref="Stock" />.
-        /// </summary>
-        /// <param name="stock">A instance of a <see cref="Stock" /> which contains which will be created.</param>
+        /// <inheritdoc/>
         [HttpPost]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Create))]
         public IActionResult Create(Stock stock)
@@ -74,10 +65,7 @@ namespace StockHubApi.Controllers
             return Created(new Uri("/Stock", UriKind.Relative), dbStock);
         }
 
-        /// <summary>
-        /// Updates a single <see cref="Stock" />.
-        /// </summary>
-        /// <param name="stock">A instance of a <see cref="Stock" /> which will be updated with the given values.</param>
+        /// <inheritdoc/>
         [HttpPut("{id}")]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Put))]
         public IActionResult Update(Stock stock)
@@ -86,10 +74,7 @@ namespace StockHubApi.Controllers
             return NoContent();
         }
 
-        /// <summary>
-        /// Deletes a single <see cref="Stock" />.
-        /// </summary>
-        /// <param name="id">The id of the a <see cref="Stock" /> which will be deleted.</param>
+        /// <inheritdoc/>
         [HttpDelete("{id}")]
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Delete))]
         public IActionResult Delete(int id)

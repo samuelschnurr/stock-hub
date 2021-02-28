@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using StockHubApi.Data;
+using StockHubApi.Interfaces;
 using StockHubApi.Models;
 
 namespace StockHubApi.Services
@@ -7,7 +8,7 @@ namespace StockHubApi.Services
     /// <summary>
     /// Handles processing of <see cref="Stock"/>s and calls depending CRUD-operations in a given <see cref="stockRepository"/>.
     /// </summary>
-    public class StockService
+    public class StockService : IStockService
     {
         private readonly StockRepository stockRepository;
 
@@ -20,48 +21,31 @@ namespace StockHubApi.Services
             this.stockRepository = stockRepository;
         }
 
-        /// <summary>
-        /// Retreives all <see cref="Stock"/>s.
-        /// </summary>
-        /// <returns>An <see cref="IEnumerable{T}"/> of <see cref="Stock"/>.</returns>
+        /// <inheritdoc/>
         public IEnumerable<Stock> GetStocks()
         {
             return stockRepository.GetStocks();
         }
 
-        /// <summary>
-        /// Retreives a single <see cref="Stock"/> by a given id.
-        /// </summary>
-        /// <param name="id">The id of the a <see cref="Stock"/> which will be retreived.</param>
-        /// <returns>A <see cref="Stock"/> by the given id.</returns>
+        /// <inheritdoc/>
         public Stock GetStock(int id)
         {
             return stockRepository.GetStock(id);
         }
 
-        /// <summary>
-        /// Creates a single <see cref="Stock"/>.
-        /// </summary>
-        /// <param name="stock">A instance of a <see cref="Stock"/> which contains which will be created.</param>
-        /// <returns>The created <see cref="Stock" /> with it database id, or null if it was not created.</returns>
+        /// <inheritdoc/>
         public Stock CreateStock(Stock stock)
         {
             return stockRepository.CreateStock(stock);
         }
 
-        /// <summary>
-        /// Updates a single <see cref="Stock"/>.
-        /// </summary>
-        /// <param name="stock">A instance of a <see cref="Stock"/> which will be updated with the given values.</param>
+        /// <inheritdoc/>
         public void UpdateStock(Stock stock)
         {
             stockRepository.UpdateStock(stock);
         }
 
-        /// <summary>
-        /// Deletes a single <see cref="Stock"/>.
-        /// </summary>
-        /// <param name="id">The id of the a <see cref="Stock"/> which will be deleted.</param>
+        /// <inheritdoc/>
         public void DeleteStock(int id)
         {
             stockRepository.DeleteStock(id);

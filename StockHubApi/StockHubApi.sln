@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockHubApi", "StockHubApi\StockHubApi.csproj", "{B5306671-5347-4545-95DE-8DD7BBB09EDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockHubApi.Tests", "StockHubApi.Tests\StockHubApi.Tests.csproj", "{4018BFD9-530D-4318-BB2A-0A8D754A35BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockHubApi.Tests", "StockHubApi.Tests\StockHubApi.Tests.csproj", "{4018BFD9-530D-4318-BB2A-0A8D754A35BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

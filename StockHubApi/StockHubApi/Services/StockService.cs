@@ -6,7 +6,7 @@ using StockHubApi.Models;
 namespace StockHubApi.Services
 {
     /// <summary>
-    /// Handles processing of <see cref="Stock"/>s and calls depending CRUD-operations in a given <see cref="stockRepository"/>.
+    /// Handles processing of <see cref="Stock"/>s and calls depending CRUD-operations in a given <see cref="IStockRepository"/>.
     /// </summary>
     public class StockService : IStockService
     {
@@ -15,7 +15,7 @@ namespace StockHubApi.Services
         /// <summary>
         /// Creates a new instance of <see cref="StockService"/>.
         /// </summary>
-        /// <param name="stockRepository">The via dependency injection loaded <see cref="stockRepository"/> on which CRUD-operations can be called.</param>
+        /// <param name="stockRepository">The via dependency injection loaded implementation of <see cref="IStockRepository"/> on which CRUD-operations can be called.</param>
         public StockService(IStockRepository stockRepository)
         {
             this.stockRepository = stockRepository;

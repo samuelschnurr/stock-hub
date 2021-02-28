@@ -4,7 +4,6 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using StockHubApi.Interfaces;
 using StockHubApi.Models;
-using StockHubApi.Services;
 
 namespace StockHubApi.Controllers
 {
@@ -15,13 +14,13 @@ namespace StockHubApi.Controllers
     [ApiController]
     public class StockController : ControllerBase, IStockController
     {
-        private readonly StockService stockService;
+        private readonly IStockService stockService;
 
         /// <summary>
         /// The default constructor for creating a new instance of <see cref="StockController" />.
         /// </summary>
-        /// <param name="stockService">The via dependency injection loaded <see cref="stockService" />.</param>
-        public StockController(StockService stockService)
+        /// <param name="stockService">The via dependency injection loaded implementation of <see cref="IStockService" />.</param>
+        public StockController(IStockService stockService)
         {
             this.stockService = stockService;
         }

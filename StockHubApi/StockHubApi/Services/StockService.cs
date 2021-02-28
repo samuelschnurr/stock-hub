@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using StockHubApi.Data;
 using StockHubApi.Interfaces;
 using StockHubApi.Models;
 
@@ -10,13 +9,13 @@ namespace StockHubApi.Services
     /// </summary>
     public class StockService : IStockService
     {
-        private readonly StockRepository stockRepository;
+        private readonly IStockRepository stockRepository;
 
         /// <summary>
         /// Creates a new instance of <see cref="StockService"/>.
         /// </summary>
         /// <param name="stockRepository">The via dependency injection loaded <see cref="stockRepository"/> on which CRUD-operations can be called.</param>
-        public StockService(StockRepository stockRepository)
+        public StockService(IStockRepository stockRepository)
         {
             this.stockRepository = stockRepository;
         }

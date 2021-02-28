@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using StockHubApi.Interfaces;
 using StockHubApi.Models;
@@ -18,6 +19,11 @@ namespace StockHubApi.Data
         /// <param name="dbContext">The via dependency injection loaded <see cref="StockHubDbContext"/> on which CRUD-operations will be executed.</param>
         public StockRepository(StockHubDbContext dbContext)
         {
+            if (dbContext == null)
+            {
+                throw new ArgumentNullException(nameof(dbContext));
+            }
+
             this.dbContext = dbContext;
         }
 

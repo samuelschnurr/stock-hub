@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using StockHubApi.Models;
 
 namespace StockHubApi.Data
@@ -14,6 +15,10 @@ namespace StockHubApi.Data
         /// <param name="options">Can be used for configuring the <see cref="DbContext"/> and will be passed to the base implementation.</param>
         public StockHubDbContext(DbContextOptions<StockHubDbContext> options) : base(options)
         {
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
         }
 
         /// <summary>

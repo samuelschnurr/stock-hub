@@ -12,18 +12,18 @@ import { BodyComponent } from './body/body.component';
  * Other code in the core module will only be used in the app.module.
  */
 @NgModule({
-  declarations: [NavBarComponent, FooterComponent, BodyComponent],
-  imports: [
-    BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right',
-    }),
-    SharedModule
-  ],
-  exports: [
-    NavBarComponent,
-    FooterComponent,
-    BodyComponent
-  ]
+    declarations: [NavBarComponent, FooterComponent, BodyComponent],
+    imports: [
+        BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-bottom-right',
+        }),
+        SharedModule
+    ],
+    exports: [
+        NavBarComponent,
+        FooterComponent,
+        BodyComponent
+    ]
 })
 export class CoreModule { }

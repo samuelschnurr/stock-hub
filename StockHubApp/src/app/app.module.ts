@@ -7,17 +7,17 @@ import { PortfolioModule } from './portfolio/portfolio.module';
 import { StockModule } from './stock/stock.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    CoreModule,
-    SharedModule,
-    PortfolioModule,
-    StockModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        CoreModule,
+        SharedModule,
+        PortfolioModule,
+        StockModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

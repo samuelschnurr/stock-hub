@@ -6,107 +6,108 @@ import { Stock } from '../shared/stock.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-stock-editor',
-  templateUrl: './stock-editor.component.html'
+    selector: 'app-stock-editor',
+    templateUrl: './stock-editor.component.html'
 })
 export class StockEditorComponent implements OnInit {
-  /** The form to create or update a Stock. */
-  public stockForm: FormGroup;
+    /** The form to create or update a Stock. */
+    public stockForm: FormGroup;
 
-  /**
-   * Creates a new instance of StockEditor.
-   * @param stockService The via dependency injection loaded service for stock actions.
-   * @param toastrService The via dependency injection loaded service for showing toasts.
-   * @param router The via dependency injection loaded router for navigation actions.
-   * @param formBuilder The via dependency injection loaded formBuilder for setting up the editor.
-   */
-  public constructor(public stockService: StockService,
-                     private toastrService: ToastrService,
-                     private router: Router,
-                     private formBuilder: FormBuilder) {
-    this.stockForm = this.formBuilder.group(new Stock());
-  }
-
-  /**
-   * Patches the values of the StockEditor with values of the record if it exists.
-   */
-  public ngOnInit(): void {
-    if (this.stockService.formData.id !== 0) {
-      this.stockForm.patchValue(this.stockService.formData);
-    }
-  }
-
-  /**
-   * Submits the data of the stockForm and creates the record if its id is 0.
-   * If the id is not 0 an update action will be triggered.
-   */
-  public onSubmit(): void {
-    if (!this.stockForm.valid) {
-      return;
+    /**
+     * Creates a new instance of StockEditor.
+     *
+     * @param stockService The via dependency injection loaded service for stock actions.
+     * @param toastrService The via dependency injection loaded service for showing toasts.
+     * @param router The via dependency injection loaded router for navigation actions.
+     * @param formBuilder The via dependency injection loaded formBuilder for setting up the editor.
+     */
+    public constructor(public stockService: StockService,
+                       private toastrService: ToastrService,
+                       private router: Router,
+                       private formBuilder: FormBuilder) {
+        this.stockForm = this.formBuilder.group(new Stock());
     }
 
-    this.stockService.formData = this.stockForm.value;
-
-    if (this.stockService.formData.id === 0) {
-      this.insertRecord();
-    } else {
-      this.updateRecord();
+    /**
+     * Patches the values of the StockEditor with values of the record if it exists.
+     */
+    public ngOnInit(): void {
+        if (this.stockService.formData.id !== 0) {
+            this.stockForm.patchValue(this.stockService.formData);
+        }
     }
-  }
 
-  /**
-   * Returns the name property of the StockForm.
-   */
-  public get name(): AbstractControl | null {
-    return this.stockForm.get('name');
-  }
+    /**
+     * Submits the data of the stockForm and creates the record if its id is 0.
+     * If the id is not 0 an update action will be triggered.
+     */
+    public onSubmit(): void {
+        if (!this.stockForm.valid) {
+            return;
+        }
 
-  /**
-   * Returns the name amount of the StockForm.
-   */
-  public get amount(): AbstractControl | null {
-    return this.stockForm.get('amount');
-  }
+        this.stockService.formData = this.stockForm.value;
 
-  /**
-   * Returns the acquisitionPricePerUnit property of the StockForm.
-   */
-  public get acquisitionPricePerUnit(): AbstractControl | null {
-    return this.stockForm.get('acquisitionPricePerUnit');
-  }
+        if (this.stockService.formData.id === 0) {
+            this.insertRecord();
+        } else {
+            this.updateRecord();
+        }
+    }
 
-  private resetForm(): void {
-    this.stockForm.reset();
-    this.stockService.formData = new Stock();
-  }
+    /**
+     * Returns the name property of the StockForm.
+     */
+    public get name(): AbstractControl | null {
+        return this.stockForm.get('name');
+    }
 
-  private insertRecord(): void {
-    this.stockService.postStock().subscribe(
-      result => {
-        this.toastrService.success($localize`Stock is created.`);
-        console.log('success');
-        this.resetForm();
-        this.router.navigate(['stocks']);
-      },
-      error => {
-        this.toastrService.error($localize`Creating stock failed.`);
-        console.error(error);
-      }
-    );
-  }
+    /**
+     * Returns the name amount of the StockForm.
+     */
+    public get amount(): AbstractControl | null {
+        return this.stockForm.get('amount');
+    }
 
-  private updateRecord(): void {
-    this.stockService.updateStock().subscribe(
-      result => {
-        this.toastrService.success($localize`Stock is updated.`);
-        console.log('success');
-        this.resetForm();
-        this.router.navigate(['stocks']);
-      },
-      error => {
-        this.toastrService.error($localize`Updating stock failed.`);
-        console.error(error);
-      }
-    );
-  }
+    /**
+     * Returns the acquisitionPricePerUnit property of the StockForm.
+     */
+    public get acquisitionPricePerUnit(): AbstractControl | null {
+        return this.stockForm.get('acquisitionPricePerUnit');
+    }
+
+    private resetForm(): void {
+        this.stockForm.reset();
+        this.stockService.formData = new Stock();
+    }
+
+    private insertRecord(): void {
+        this.stockService.postStock().subscribe(
+            result => {
+                this.toastrService.success($localize`Stock is created.`);
+                console.log('success');
+                this.resetForm();
+                this.router.navigate(['stocks']);
+            },
+            error => {
+                this.toastrService.error($localize`Creating stock failed.`);
+                console.error(error);
+            }
+        );
+    }
+
+    private updateRecord(): void {
+        this.stockService.updateStock().subscribe(
+            result => {
+                this.toastrService.success($localize`Stock is updated.`);
+                console.log('success');
+                this.resetForm();
+                this.router.navigate(['stocks']);
+            },
+            error => {
+                this.toastrService.error($localize`Updating stock failed.`);
+                console.error(error);
+            }
+        );
+    }
 }

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-body',
-  templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+    selector: 'app-body',
+    templateUrl: './body.component.html',
+    styleUrls: ['./body.component.css']
 })
 export class BodyComponent {
-  public constructor() { }
+    public constructor() { }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using StockHubApi.Data;
+using StockHubApi.Interfaces;
 using StockHubApi.Services;
 
 namespace StockHubApi.Utils
@@ -15,7 +16,7 @@ namespace StockHubApi.Utils
         /// <param name="services">The instance of <see cref="IServiceCollection"/> on which the extension method is called.</param>
         public static void AddCustomServices(this IServiceCollection services)
         {
-            services.AddTransient<StockService>();
+            services.AddTransient<IStockService, StockService>();
         }
 
         /// <summary>
@@ -24,7 +25,7 @@ namespace StockHubApi.Utils
         /// <param name="services">The instance of <see cref="IServiceCollection"/> on which the extension method is called.</param>
         public static void AddCustomRepositories(this IServiceCollection services)
         {
-            services.AddTransient<StockRepository>();
+            services.AddTransient<IStockRepository, StockRepository>();
         }
     }
 }

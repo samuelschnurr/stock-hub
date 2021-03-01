@@ -1,0 +1,15 @@
+#background {
+  position: fixed;
+  bottom: 0px;
+  left: -0px;
+  z-index: -10;
+}
+
+#routerOutlet {
+  width: 100%;
+  margin: auto;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}

@@ -4,6 +4,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from '../shared/shared.module';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import { BodyComponent } from './body/body.component';
 
 /**
  * The core module contains basic implementations which are instantiated only once.
@@ -11,7 +12,7 @@ import { FooterComponent } from './footer/footer.component';
  * Other code in the core module will only be used in the app.module.
  */
 @NgModule({
-  declarations: [NavBarComponent, FooterComponent],
+  declarations: [NavBarComponent, FooterComponent, BodyComponent],
   imports: [
     BrowserAnimationsModule,
     ToastrModule.forRoot({
@@ -21,7 +22,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   exports: [
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    BodyComponent
   ]
 })
 export class CoreModule { }

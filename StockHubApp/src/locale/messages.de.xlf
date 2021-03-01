@@ -210,14 +210,35 @@
           <context context-type="linenumber">107</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="bcc4e9287ae91ee99db0891879d358f0ae7eeb86" datatype="html">
-        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg width=&quot;24&quot; height=&quot;24&quot;&gt;"/><x id="START_TAG__SVG_USE" ctype="x-_svg_use" equiv-text="&lt;use xlink:href=&quot;assets/bootstrap-icons/bootstrap-icons.svg#plus&quot; /&gt;"/><x id="CLOSE_TAG__SVG_USE" ctype="x-_svg_use" equiv-text="&lt;use xlink:href=&quot;assets/bootstrap-icons/bootstrap-icons.svg#plus&quot; /&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;
-  "/> Add new
-</source>
-<target>Anlegen</target>
-        <context-group purpose="location">
+      <trans-unit id="95b74c4d094eeaa1d5530d5cdc16f84cd02059d3" datatype="html">
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      width=&quot;24&quot;
+      height=&quot;24&quot;
+      fill=&quot;currentColor&quot;
+      class=&quot;bi bi-plus&quot;
+      viewBox=&quot;0 0 16 16&quot;
+    &gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path
+        d=&quot;M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z&quot;
+      /&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path
+        d=&quot;M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z&quot;
+      /&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;
+    "/> Add new </source>
+    <target><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg
+      xmlns=&quot;http://www.w3.org/2000/svg&quot;
+      width=&quot;24&quot;
+      height=&quot;24&quot;
+      fill=&quot;currentColor&quot;
+      class=&quot;bi bi-plus&quot;
+      viewBox=&quot;0 0 16 16&quot;
+    &gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path
+        d=&quot;M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z&quot;
+      /&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path
+        d=&quot;M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z&quot;
+      /&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;
+    "/>Anlegen</target>       <context-group purpose="location">
           <context context-type="sourcefile">src/app/stock/stock-list/stock-list.component.html</context>
-          <context context-type="linenumber">8,12</context>
+          <context context-type="linenumber">9,22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3682118493548016182" datatype="html">

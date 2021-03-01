@@ -47,7 +47,11 @@ namespace StockHubApi
                 });
             });
 
-            services.AddControllers();
+            services.AddControllers(config =>
+            {
+                config.Filters.Add(typeof(ExceptionFilter));
+                config.Filters.Add(typeof(ActionFilter));
+            });
             services.AddCustomServices();
             services.AddCustomRepositories();
             services.AddDbContext<StockHubDbContext>(options =>

@@ -13,6 +13,8 @@ export class StockListComponent implements OnInit {
   public modalId = 0;
   /** The body of the modal dialog. */
   public modalBody = $localize`Do you want to delete this stock?`;
+  /** Can be bound to hide table elements to prevent seeing the table resize after data load. */
+  public isRefreshListFinished = false;
 
   /**
    * Creates a new instance of the StockList class.
@@ -23,7 +25,9 @@ export class StockListComponent implements OnInit {
   public constructor(public stockService: StockService, private toastrService: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    this.stockService.refreshList();
+    this.stockService.refreshList().then(() =>
+      this.isRefreshListFinished = true
+    );
   }
 
   /**

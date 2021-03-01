@@ -150,6 +150,12 @@ module.exports = {
         ],
         "@typescript-eslint/type-annotation-spacing": "error",
         "@typescript-eslint/unified-signatures": "error",
+        "@typescript-eslint/unbound-method": [
+            "error",
+            {
+                "ignoreStatic": true
+            }
+        ],
         "arrow-body-style": "error",
         "complexity": "off",
         "constructor-super": "error",

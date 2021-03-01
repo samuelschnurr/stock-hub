@@ -26,7 +26,7 @@ export class StockListComponent implements OnInit {
     public constructor(public stockService: StockService, private toastrService: ToastrService, private router: Router) { }
 
     ngOnInit(): void {
-        this.stockService.refreshList().then(() =>
+        void this.stockService.refreshList().then(() =>
             this.isRefreshListFinished = true
         );
     }
@@ -39,7 +39,7 @@ export class StockListComponent implements OnInit {
     public populateForm(selectedRecord: Stock): void {
     // Use Object.assign to not copy the reference to the list
         this.stockService.formData = Object.assign({}, selectedRecord);
-        this.router.navigate(['stocks/new']);
+        void this.router.navigate(['stocks/new']);
     }
 
     /**
@@ -59,10 +59,10 @@ export class StockListComponent implements OnInit {
      */
     public submitModal(id: number): void {
         this.stockService.deleteStock(id).subscribe(
-            result => {
+            () => {
                 this.toastrService.success($localize`Stock is deleted.`);
                 console.log('success');
-                this.stockService.refreshList();
+                void this.stockService.refreshList();
             },
             error => {
                 this.toastrService.error($localize`Deleting stock failed.`);

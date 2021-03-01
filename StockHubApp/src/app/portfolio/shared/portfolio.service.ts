@@ -16,9 +16,9 @@ export class PortfolioService {
     /**
      * Gets a Stock[] from the backend.
      *
-     * @returns A Promise of object.
+     * @returns A Promise of unknown.
      */
-    public getPortfolio(): Promise<object> {
+    public getPortfolio(): Promise<unknown> {
         return this.httpClient.get(environment.apiUrlStock).toPromise();
     }
 }

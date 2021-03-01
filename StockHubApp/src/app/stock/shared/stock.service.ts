@@ -25,18 +25,18 @@ export class StockService {
     /**
      * Posts the formData to the backend.
      *
-     * @returns A observable object of the post response.
+     * @returns A observable unknown of the post response.
      */
-    public postStock(): Observable<object> {
+    public postStock(): Observable<unknown> {
         return this.httpClient.post(environment.apiUrlStock, this.formData);
     }
 
     /**
      * Puts the formData to the backend.
      *
-     * @returns A observable object of the put response.
+     * @returns A observable unknown of the put response.
      */
-    public updateStock(): Observable<object> {
+    public updateStock(): Observable<unknown> {
         return this.httpClient.put(`${environment.apiUrlStock}/${this.formData.id}`, this.formData);
     }
 
@@ -44,9 +44,9 @@ export class StockService {
      * Deletes the formData to the backend.
      *
      * @param id The id of the Stock to delete.
-     * @returns A observable object of the delete response.
+     * @returns A observable unknown of the delete response.
      */
-    public deleteStock(id: number): Observable<object> {
+    public deleteStock(id: number): Observable<unknown> {
         return this.httpClient.delete(`${environment.apiUrlStock}/${id}`);
     }
 

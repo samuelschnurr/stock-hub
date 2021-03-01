@@ -46,6 +46,7 @@ export class StockEditorComponent implements OnInit {
             return;
         }
 
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         this.stockService.formData = this.stockForm.value;
 
         if (this.stockService.formData.id === 0) {

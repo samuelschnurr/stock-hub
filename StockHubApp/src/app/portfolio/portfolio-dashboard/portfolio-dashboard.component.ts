@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { PortfolioService } from '../shared/portfolio.service';
 import { Stock } from '../../stock/shared/stock.model';
-import { ToastrService } from 'ngx-toastr';
+import { PieChartData } from '../shared/pieChartData.model';
 
 @Component({
     selector: 'app-portfolio-dashboard',
@@ -10,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PortfolioDashboardComponent implements OnInit {
     /** The data which will be shown in the chart. */
-    public chartData: any[] = [];
+    public chartData: PieChartData[] = [];
 
     /**
      * Creates a new instance of PortfolioDashbaord.
@@ -35,11 +36,11 @@ export class PortfolioDashboardComponent implements OnInit {
             });
     }
 
-    private createChartData(stocks: Stock[]): any[] {
-        const chartData: any[] = [];
+    private createChartData(stocks: Stock[]): PieChartData[] {
+        const chartData: PieChartData[] = [];
 
         for (const stock of stocks) {
-            chartData.push({ name: stock.name, value: +stock.amount * +stock.acquisitionPricePerUnit });
+            chartData.push(new PieChartData(stock.name.toString(), +stock.amount * +stock.acquisitionPricePerUnit));
         }
 
         return chartData;

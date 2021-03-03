@@ -5,14 +5,14 @@ import { StockEditorComponent } from '../../stock/stock-editor/stock-editor.comp
 import { StockListComponent } from '../../stock/stock-list/stock-list.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
-  { path: 'portfolio', component: PortfolioDashboardComponent },
-  { path: 'stocks', component: StockListComponent },
-  { path: 'stocks/new', component: StockEditorComponent },
+    { path: '', redirectTo: 'portfolio', pathMatch: 'full' },
+    { path: 'portfolio', component: PortfolioDashboardComponent },
+    { path: 'stocks', component: StockListComponent },
+    { path: 'stocks/new', component: StockEditorComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

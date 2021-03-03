@@ -9,19 +9,19 @@ import { ModalDialogComponent } from './modal-dialog/modal-dialog.component';
  * The shared module provides global access to a set of common used implementations.
  */
 @NgModule({
-  declarations: [ModalDialogComponent],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    AppRoutingModule
-  ],
-  exports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    ModalDialogComponent
-  ]
+    declarations: [ModalDialogComponent],
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        AppRoutingModule
+    ],
+    exports: [
+        CommonModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        ModalDialogComponent
+    ]
 })
 export class SharedModule { }

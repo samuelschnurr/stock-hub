@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { PortfolioService } from '../shared/portfolio.service';
 import { Stock } from '../../stock/shared/stock.model';
-import { ToastrService } from 'ngx-toastr';
+import { PieChartData } from '../shared/pieChartData.model';
 
 @Component({
-  selector: 'app-portfolio-dashboard',
-  templateUrl: './portfolio-dashboard.component.html',
-  styleUrls: ['./portfolio-dashboard.css']
+    selector: 'app-portfolio-dashboard',
+    templateUrl: './portfolio-dashboard.component.html',
+    styleUrls: ['./portfolio-dashboard.css']
 })
 export class PortfolioDashboardComponent implements OnInit {
-  /** The data which will be shown in the chart. */
-  public chartData: any[] = [];
+    /** The data which will be shown in the chart. */
+    public chartData: PieChartData[] = [];
 
-  /**
-   * Creates a new instance of PortfolioDashbaord.
-   * @param portfolioService The via dependency injection loaded service for portfolio actions.
-   * @param toastrService The via dependency injection loaded service for showing toasts.
-   */
-  public constructor(private portfolioService: PortfolioService, private toastrService: ToastrService) { }
+    /**
+     * Creates a new instance of PortfolioDashbaord.
+     *
+     * @param portfolioService The via dependency injection loaded service for portfolio actions.
+     * @param toastrService The via dependency injection loaded service for showing toasts.
+     */
+    public constructor(private portfolioService: PortfolioService, private toastrService: ToastrService) { }
 
   /**
    * Gets the Stock[] data from the backend and setups the portfolio chart with its values.
@@ -32,14 +34,14 @@ export class PortfolioDashboardComponent implements OnInit {
           console.error(error);
         });
   }
+  
+  private createChartData(stocks: Stock[]): PieChartData[] {
+        const chartData: PieChartData[] = [];
 
-  private createChartData(stocks: Stock[]): any[] {
-    const chartData: any[] = [];
+        for (const stock of stocks) {
+            chartData.push(new PieChartData(stock.name.toString(), +stock.amount * +stock.acquisitionPricePerUnit));
+        }
 
-    for (const stock of stocks) {
-      chartData.push({ name: stock.name, value: +stock.amount * +stock.acquisitionPricePerUnit });
+        return chartData;
     }
-
-    return chartData;
-  }
 }

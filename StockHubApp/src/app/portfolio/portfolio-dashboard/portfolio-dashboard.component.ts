@@ -25,12 +25,11 @@ export class PortfolioDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.portfolioService.getPortfolio()
       .then((result) => {
-        console.log('success');
         this.chartData = this.createChartData(result as Stock[]);
       },
         error => {
           this.toastrService.error($localize`Loading portfolio failed.`);
-          console.log(error);
+          console.error(error);
         });
   }
 

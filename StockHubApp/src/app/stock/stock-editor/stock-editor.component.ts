@@ -82,9 +82,8 @@ export class StockEditorComponent implements OnInit {
 
   private insertRecord(): void {
     this.stockService.postStock().subscribe(
-      result => {
+      () => {
         this.toastrService.success($localize`Stock is created.`);
-        console.log('success');
         this.resetForm();
         this.router.navigate(['stocks']);
       },
@@ -97,9 +96,8 @@ export class StockEditorComponent implements OnInit {
 
   private updateRecord(): void {
     this.stockService.updateStock().subscribe(
-      result => {
+      () => {
         this.toastrService.success($localize`Stock is updated.`);
-        console.log('success');
         this.resetForm();
         this.router.navigate(['stocks']);
       },

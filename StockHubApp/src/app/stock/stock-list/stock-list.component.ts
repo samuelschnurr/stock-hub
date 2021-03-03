@@ -55,9 +55,8 @@ export class StockListComponent implements OnInit {
    */
   public submitModal(id: number): void {
     this.stockService.deleteStock(id).subscribe(
-      result => {
+      () => {
         this.toastrService.success($localize`Stock is deleted.`);
-        console.log('success');
         this.stockService.refreshList();
       },
       error => {

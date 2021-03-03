@@ -34,6 +34,7 @@ export class StockService {
    * @returns A observable object of the put response.
    */
   public updateStock(): Observable<object> {
+    console.info(`Updating stock with id: ${this.formData.id}`)
     return this.httpClient.put(`${environment.apiUrlStock}/${this.formData.id}`, this.formData);
   }
 
@@ -43,6 +44,7 @@ export class StockService {
    * @returns A observable object of the delete response.
    */
   public deleteStock(id: number): Observable<object> {
+    console.info(`Deleting stock with id: ${id}`)
     return this.httpClient.delete(`${environment.apiUrlStock}/${id}`);
   }
 
@@ -60,7 +62,7 @@ export class StockService {
       },
         error => {
           this.toastrService.error($localize`Loading stocks failed.`);
-          console.log(error);
+          console.error(error);
         });
   }
 }

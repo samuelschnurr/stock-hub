@@ -61,7 +61,6 @@ export class StockListComponent implements OnInit {
         this.stockService.deleteStock(id).subscribe(
             () => {
                 this.toastrService.success($localize`Stock is deleted.`);
-                console.log('success');
                 void this.stockService.refreshList();
             },
             error => {

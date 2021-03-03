@@ -37,6 +37,7 @@ export class StockService {
      * @returns A observable unknown of the put response.
      */
     public updateStock(): Observable<unknown> {
+        console.info(`Updating stock with id: ${this.formData.id}`)
         return this.httpClient.put(`${environment.apiUrlStock}/${this.formData.id}`, this.formData);
     }
 
@@ -47,6 +48,7 @@ export class StockService {
      * @returns A observable unknown of the delete response.
      */
     public deleteStock(id: number): Observable<unknown> {
+        console.info(`Deleting stock with id: ${id}`)
         return this.httpClient.delete(`${environment.apiUrlStock}/${id}`);
     }
 

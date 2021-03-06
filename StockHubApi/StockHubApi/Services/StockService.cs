@@ -34,6 +34,12 @@ namespace StockHubApi.Services
         }
 
         /// <inheritdoc/>
+        public Stock GetStockAsNoTracking(int id)
+        {
+            return stockRepository.GetStockAsNoTracking(id);
+        }
+
+        /// <inheritdoc/>
         public Stock CreateStock(Stock stock)
         {
             if (stock == null)

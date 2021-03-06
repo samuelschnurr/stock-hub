@@ -41,7 +41,14 @@ namespace StockHubApi.Tests
             mockStockRepository.Setup(stockRepository => stockRepository.GetStocks())
                 .Returns(new List<Stock> {validStock});
             mockStockRepository.Setup(stockRepository => stockRepository.CreateStock(It.IsNotNull<Stock>()))
-                .Callback((Stock stock) => stocks.Add(stock))
+                .Callback((Stock stock) =>
+                    stocks.Add(new Stock
+                    {
+                        Id = 999,
+                        AcquisitionPricePerUnit = stock.AcquisitionPricePerUnit,
+                        Amount = stock.Amount,
+                        Name = stock.Name
+                    }))
                 .Returns(() => stocks.Last());
             mockStockRepository.Setup(stockRepository => stockRepository.UpdateStock(It.IsNotNull<Stock>()))
                 .Callback((Stock stock) => validStock = stock);
@@ -127,7 +134,6 @@ namespace StockHubApi.Tests
 
             Stock stock = new()
             {
-                Id = 999,
                 AcquisitionPricePerUnit = 2500,
                 Name = "Amazon",
                 Amount = 2
@@ -138,7 +144,7 @@ namespace StockHubApi.Tests
 
             // Assert
             Assert.NotNull(createdStock);
-            Assert.AreEqual(createdStock.Id, stock.Id);
+            Assert.Greater(createdStock.Id, 0);
             Assert.Less(stockCountOld, stocks.Count);
             mockStockRepository.Verify(stockRepository => stockRepository.CreateStock(stock), Times.Once);
         }

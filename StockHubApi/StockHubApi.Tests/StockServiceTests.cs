@@ -88,6 +88,7 @@ namespace StockHubApi.Tests
         /// <summary>
         /// Tests if a a exception is thrown if the given id is not valid for database querying for getting a <see cref="Stock"/>.
         /// </summary>
+        /// <param name="id">The id of the <see cref="Stock"/> which should be returned.</param>
         [TestCase(0)]
         [TestCase(-1)]
         public void GetStock_When_IdIsInValid_Expect_ArgumentOutOfRangeException(int id)
@@ -196,6 +197,7 @@ namespace StockHubApi.Tests
         /// <summary>
         /// Tests if a exception is thrown if the if of the <see cref="Stock"/> which should be deleted is not valid for database querying.
         /// </summary>
+        /// <param name="id">The id of the <see cref="Stock"/> which should be deleted.</param>
         [TestCase(0)]
         [TestCase(-1)]
         public void DeleteStock_When_IdIsInValid_Expect_ArgumentOutOfRangeException(int id)

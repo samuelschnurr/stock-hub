@@ -10,11 +10,13 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <OutputPath>bin\Debug\net5.0\</OutputPath>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\net5.0\StockHubApi.Tests.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <OutputPath>bin\Release\net5.0\</OutputPath>
+    <DocumentationFile>bin\Release\net5.0\StockHubApi.Tests.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

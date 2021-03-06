@@ -85,7 +85,7 @@ namespace StockHubApi.Tests
         [TestCase(-1)]
         public void GetStock_When_IdIsInValid_Expect_ArgumentOutOfRangeException(int id)
         {
-            // Arrange, Act, Assert
+            // Act, Assert
             Assert.Throws<InvalidOperationException>(() => stockService.GetStock(id));
             mockStockRepository.Verify(stockRepository => stockRepository.GetStock(id), Times.Once);
         }
@@ -96,7 +96,7 @@ namespace StockHubApi.Tests
         [Test]
         public void GetStocks_WhenMethodIsCalled_Expect_ListOfStocks()
         {
-            // Arrange, Act
+            // Act
             List<Stock> stocks = stockService.GetStocks().ToList();
 
             // Assert
@@ -111,7 +111,7 @@ namespace StockHubApi.Tests
         [Test]
         public void CreateStock_WhenStockIsNull_Expect_ArgumentNullException()
         {
-            // Arrange, Act, Assert
+            // Act, Assert
             Assert.Throws<ArgumentNullException>(() => stockService.CreateStock(null));
             mockStockRepository.Verify(stockRepository => stockRepository.CreateStock(null), Times.Never);
         }
@@ -149,7 +149,7 @@ namespace StockHubApi.Tests
         [Test]
         public void UpdateStock_WhenStockIsNull_Expect_ArgumentNullException()
         {
-            // Arrange, Act, Assert
+            // Act, Assert
             Assert.Throws<ArgumentNullException>(() => stockService.UpdateStock(null));
             mockStockRepository.Verify(stockRepository => stockRepository.UpdateStock(null), Times.Never);
         }
@@ -194,7 +194,7 @@ namespace StockHubApi.Tests
         [TestCase(-1)]
         public void DeleteStock_When_IdIsInValid_Expect_ArgumentOutOfRangeException(int id)
         {
-            // Arrange, Act, Assert
+            // Act, Assert
             Assert.Throws<InvalidOperationException>(() => stockService.DeleteStock(id));
             mockStockRepository.Verify(stockRepository => stockRepository.DeleteStock(id), Times.Once);
         }

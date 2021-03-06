@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using StockHubApi.Models;
 
 namespace StockHubApi.Interfaces
@@ -20,6 +21,14 @@ namespace StockHubApi.Interfaces
         /// <param name="id">The id of the a <see cref="Stock"/> which will be retreived.</param>
         /// <returns>A <see cref="Stock"/> by the given id.</returns>
         Stock GetStock(int id);
+
+        /// <summary>
+        /// Retreives a single <see cref="Stock"/> by a given id.
+        /// The record is not being tracked by the <see cref="ChangeTracker"/>.
+        /// </summary>
+        /// <param name="id">The id of the a <see cref="Stock"/> which will be retreived.</param>
+        /// <returns>A <see cref="Stock"/> by the given id.</returns>
+        Stock GetStockAsNoTracking(int id);
 
         /// <summary>
         /// Creates a single <see cref="Stock"/> and persists the changes.

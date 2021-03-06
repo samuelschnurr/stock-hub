@@ -31,6 +31,12 @@ namespace StockHubApi.Tests
             dbContext.Stocks.AddRange(DbContextHelper.Stocks);
             dbContext.SaveChanges();
 
+            // Remove ChangeTrackers of the AddRange Method
+            foreach (var entity in dbContext.ChangeTracker.Entries())
+            {
+                entity.State = EntityState.Detached;
+            }
+
             // Setup repository to use InMemoryStockHubDbContext
             stockRepository = new StockRepository(dbContext);
         }

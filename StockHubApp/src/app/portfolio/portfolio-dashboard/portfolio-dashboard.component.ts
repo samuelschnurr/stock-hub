@@ -21,22 +21,21 @@ export class PortfolioDashboardComponent implements OnInit {
      */
     public constructor(private portfolioService: PortfolioService, private toastrService: ToastrService) { }
 
-    /**
-     * Gets the Stock[] data from the backend and setups the portfolio chart with its values.
-     */
-    ngOnInit(): void {
-        this.portfolioService.getPortfolio()
-            .then((result) => {
-                console.log('success');
-                this.chartData = this.createChartData(result as Stock[]);
-            },
-            error => {
-                this.toastrService.error($localize`Loading portfolio failed.`);
-                console.log(error);
-            });
-    }
-
-    private createChartData(stocks: Stock[]): PieChartData[] {
+  /**
+   * Gets the Stock[] data from the backend and setups the portfolio chart with its values.
+   */
+  ngOnInit(): void {
+    this.portfolioService.getPortfolio()
+      .then((result) => {
+        this.chartData = this.createChartData(result as Stock[]);
+      },
+        error => {
+          this.toastrService.error($localize`Loading portfolio failed.`);
+          console.error(error);
+        });
+  }
+  
+  private createChartData(stocks: Stock[]): PieChartData[] {
         const chartData: PieChartData[] = [];
 
         for (const stock of stocks) {

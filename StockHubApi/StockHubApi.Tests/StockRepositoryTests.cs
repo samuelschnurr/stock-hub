@@ -58,31 +58,59 @@ namespace StockHubApi.Tests
             // Assert
             Assert.IsNotNull(stock);
             Assert.AreEqual(id, stock.Id);
+            Assert.GreaterOrEqual(dbContext.ChangeTracker.Entries().Count(), 1);
+        }
+
+        /// <summary>
+        /// Tests if a corresponding <see cref="Stock"/> is returned with the given valid id without change tracking.
+        /// </summary>
+        /// <param name="id">The id of the <see cref="Stock"/> which should be returned.</param>
+        [TestCase(1)]
+        [TestCase(2)]
+        [TestCase(3)]
+        [TestCase(4)]
+        [TestCase(5)]
+        public void GetStockAsNoTracking_When_IdIsValid_Expect_StockWithGivenIdWithoutChangeTracking(int id)
+        {
+            // Act
+            Stock stock = stockRepository.GetStockAsNoTracking(id);
+
+            // Assert
+            Assert.IsNotNull(stock);
+            Assert.AreEqual(id, stock.Id);
+            Assert.Zero(dbContext.ChangeTracker.Entries().Count());
         }
 
         /// <summary>
         /// Tests if a exception is thrown if the given if doesnt exist in the database.
         /// </summary>
         /// <param name="id">The id of the <see cref="Stock"/> which should be returned.</param>
+        [TestCase(-1)]
+        [TestCase(0)]
         [TestCase(100)]
         [TestCase(1000)]
         [TestCase(999999)]
-        public void GetStock_When_IdIsValidButDoesntExist_Expect_InvalidOperationException(int id)
+        public void GetStockAsNoTracking_When_IdIsOutOfRange_Expect_InvalidOperationException(int id)
         {
             // Act, Assert
-            Assert.Throws<InvalidOperationException>(() => stockRepository.GetStock(id));
+            Assert.Throws<InvalidOperationException>(() => stockRepository.GetStockAsNoTracking(id));
         }
 
         /// <summary>
-        /// Tests if a a exception is thrown if the given id is not valid for database querying for getting a <see cref="Stock"/>.
+        /// Tests if a exception is thrown if the given if doesnt exist in the database without change tracking.
         /// </summary>
         /// <param name="id">The id of the <see cref="Stock"/> which should be returned.</param>
-        [TestCase(0)]
         [TestCase(-1)]
-        public void GetStock_When_IdIsInValid_Expect_InvalidOperationException(int id)
+        [TestCase(0)]
+        [TestCase(100)]
+        [TestCase(1000)]
+        [TestCase(999999)]
+        public void GetStockAsNoTracking_When_IdIsOutOfRange_Expect_InvalidOperationExceptionWithoutChangeTracking(
+            int id)
         {
-            // Assert
+            // Act, Assert
             Assert.Throws<InvalidOperationException>(() => stockRepository.GetStock(id));
+            Assert.Zero(dbContext.ChangeTracker.Entries().Count());
         }
 
         /// <summary>

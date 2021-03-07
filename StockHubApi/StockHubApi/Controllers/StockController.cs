@@ -69,6 +69,11 @@ namespace StockHubApi.Controllers
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Put))]
         public IActionResult Update(Stock stock)
         {
+            if (stock == null)
+            {
+                return BadRequest(stock);
+            }
+
             Stock dbStock = stockService.GetStockAsNoTracking(stock.Id);
 
             if (dbStock == null)

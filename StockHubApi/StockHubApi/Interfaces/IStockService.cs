@@ -19,7 +19,7 @@ namespace StockHubApi.Interfaces
         /// Retreives a single <see cref="Stock"/> by a given id.
         /// </summary>
         /// <param name="id">The id of the a <see cref="Stock"/> which will be retreived.</param>
-        /// <returns>A <see cref="Stock"/> by the given id.</returns>
+        /// <returns>A <see cref="Stock"/> by the given id or null if the id is not found.</returns>
         Stock GetStock(int id);
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace StockHubApi.Interfaces
         /// The record is not being tracked by the <see cref="ChangeTracker"/>.
         /// </summary>
         /// <param name="id">The id of the a <see cref="Stock"/> which will be retreived.</param>
-        /// <returns>A <see cref="Stock"/> by the given id.</returns>
+        /// <returns>A <see cref="Stock"/> by the given id ot null if the id is not found.</returns>
         Stock GetStockAsNoTracking(int id);
 
         /// <summary>

@@ -38,6 +38,8 @@ namespace StockHubApi.Tests
 
             // Setup in which cases functions will return a valid result
             mockStockRepository.Setup(stockRepository => stockRepository.GetStock(It.IsAny<int>())).Returns(validStock);
+            mockStockRepository.Setup(stockRepository => stockRepository.GetStockAsNoTracking(It.IsAny<int>()))
+                .Returns(validStock);
             mockStockRepository.Setup(stockRepository => stockRepository.GetStocks())
                 .Returns(new List<Stock> {validStock});
             mockStockRepository.Setup(stockRepository => stockRepository.CreateStock(It.IsNotNull<Stock>()))
@@ -57,6 +59,8 @@ namespace StockHubApi.Tests
 
             // Setup in which cases functions will throw an exception
             mockStockRepository.Setup(stockRepository => stockRepository.GetStock(It.Is<int>(i => i <= 0)))
+                .Throws(new InvalidOperationException());
+            mockStockRepository.Setup(stockRepository => stockRepository.GetStockAsNoTracking(It.Is<int>(i => i <= 0)))
                 .Throws(new InvalidOperationException());
             mockStockRepository.Setup(stockRepository => stockRepository.DeleteStock(It.Is<int>(i => i <= 0)))
                 .Throws(new InvalidOperationException());
@@ -86,6 +90,26 @@ namespace StockHubApi.Tests
         }
 
         /// <summary>
+        /// Tests if a corresponding <see cref="Stock"/> is returned for a given valid id when no tracking is activated.
+        /// </summary>
+        [Test]
+        public void GetStockAsNoTracking_When_IdIsValid_Expect_StockIsNotNull()
+        {
+            // Arrange
+            int id = validStock.Id;
+
+            // Act
+            Stock stock = stockService.GetStockAsNoTracking(id);
+
+            // Assert
+            Assert.IsNotNull(stock);
+            Assert.AreEqual(id, stock.Id);
+
+            // Verify repository method has been called exactly one time
+            mockStockRepository.Verify(stockRepository => stockRepository.GetStockAsNoTracking(id), Times.Once);
+        }
+
+        /// <summary>
         /// Tests if a a exception is thrown if the given id is not valid for database querying for getting a <see cref="Stock"/>.
         /// </summary>
         /// <param name="id">The id of the <see cref="Stock"/> which should be returned.</param>
@@ -96,6 +120,20 @@ namespace StockHubApi.Tests
             // Act, Assert
             Assert.Throws<InvalidOperationException>(() => stockService.GetStock(id));
             mockStockRepository.Verify(stockRepository => stockRepository.GetStock(id), Times.Once);
+        }
+
+        /// <summary>
+        /// Tests if a a exception is thrown if the given id is not valid for database querying for getting a <see cref="Stock"/>.
+        /// Tests with no tracking activated.
+        /// </summary>
+        /// <param name="id">The id of the <see cref="Stock"/> which should be returned.</param>
+        [TestCase(0)]
+        [TestCase(-1)]
+        public void GetStockAsNoTracking_When_IdIsInValid_Expect_InvalidOperationException(int id)
+        {
+            // Act, Assert
+            Assert.Throws<InvalidOperationException>(() => stockService.GetStockAsNoTracking(id));
+            mockStockRepository.Verify(stockRepository => stockRepository.GetStockAsNoTracking(id), Times.Once);
         }
 
         /// <summary>

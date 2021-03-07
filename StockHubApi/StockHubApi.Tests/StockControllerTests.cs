@@ -13,7 +13,7 @@ namespace StockHubApi.Tests
     /// Class for testing the controller used by <see cref="Stock"/>s.
     /// </summary>
     [TestFixture(Author = "Samuel Schnurr")]
-    public class StockControllerTests
+    internal class StockControllerTests
     {
         private Mock<IStockService> mockStockService;
         private IStockController stockController;

@@ -5,7 +5,7 @@ using StockHubApi.Models;
 namespace StockHubApi.Interfaces
 {
     /// <summary>
-    /// Intreface definition for <see cref="Stock"/> services.
+    /// Interface definition for <see cref="Stock"/> services.
     /// </summary>
     public interface IStockService
     {

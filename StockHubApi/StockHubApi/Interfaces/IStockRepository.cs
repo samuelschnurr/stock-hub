@@ -5,7 +5,7 @@ using StockHubApi.Models;
 namespace StockHubApi.Interfaces
 {
     /// <summary>
-    /// Intreface definition for <see cref="Stock"/> repositories.
+    /// Interface definition for <see cref="Stock"/> repositories.
     /// </summary>
     public interface IStockRepository
     {

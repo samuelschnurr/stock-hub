@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using StockHubApi.Interfaces;
 using StockHubApi.Models;
 
@@ -37,6 +38,12 @@ namespace StockHubApi.Data
         public Stock GetStock(int id)
         {
             return dbContext.Stocks.Single(s => s.Id == id);
+        }
+
+        /// <inheritdoc/>
+        public Stock GetStockAsNoTracking(int id)
+        {
+            return dbContext.Stocks.AsNoTracking().Single(s => s.Id == id);
         }
 
         /// <inheritdoc/>

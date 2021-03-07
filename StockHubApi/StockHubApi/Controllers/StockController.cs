@@ -30,14 +30,14 @@ namespace StockHubApi.Controllers
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         public IActionResult Index()
         {
-            IEnumerable<Stock> stocks = stockService.GetStocks();
+            IEnumerable<Stock> dbStocks = stockService.GetStocks();
 
-            if (stocks == null || !stocks.Any())
+            if (dbStocks == null || !dbStocks.Any())
             {
                 return NotFound();
             }
 
-            return Ok(stocks);
+            return Ok(dbStocks);
         }
 
         /// <inheritdoc/>
@@ -45,14 +45,14 @@ namespace StockHubApi.Controllers
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         public IActionResult Show(int id)
         {
-            Stock stock = stockService.GetStock(id);
+            Stock dbStock = stockService.GetStockAsNoTracking(id);
 
-            if (stock == null)
+            if (dbStock == null)
             {
                 return NotFound();
             }
 
-            return Ok(stock);
+            return Ok(dbStock);
         }
 
         /// <inheritdoc/>
@@ -69,6 +69,18 @@ namespace StockHubApi.Controllers
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Put))]
         public IActionResult Update(Stock stock)
         {
+            if (stock == null)
+            {
+                return BadRequest(stock);
+            }
+
+            Stock dbStock = stockService.GetStockAsNoTracking(stock.Id);
+
+            if (dbStock == null)
+            {
+                return NotFound();
+            }
+
             stockService.UpdateStock(stock);
             return NoContent();
         }
@@ -78,6 +90,13 @@ namespace StockHubApi.Controllers
         [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Delete))]
         public IActionResult Delete(int id)
         {
+            Stock dbStock = stockService.GetStockAsNoTracking(id);
+
+            if (dbStock == null)
+            {
+                return NotFound();
+            }
+
             stockService.DeleteStock(id);
             return Ok();
         }

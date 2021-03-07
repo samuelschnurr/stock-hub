@@ -39,7 +39,7 @@ export class StockListComponent implements OnInit {
     public populateForm(selectedRecord: Stock): void {
     // Use Object.assign to not copy the reference to the list
         this.stockService.formData = Object.assign({}, selectedRecord);
-        void this.router.navigate(['stocks/new']);
+        void this.router.navigate(['stocks/edit']);
     }
 
     /**

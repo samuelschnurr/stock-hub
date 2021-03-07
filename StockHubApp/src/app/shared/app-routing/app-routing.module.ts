@@ -9,6 +9,7 @@ const routes: Routes = [
     { path: 'portfolio', component: PortfolioDashboardComponent },
     { path: 'stocks', component: StockListComponent },
     { path: 'stocks/new', component: StockEditorComponent },
+    { path: 'stocks/edit', component: StockEditorComponent },
 ];
 
 @NgModule({

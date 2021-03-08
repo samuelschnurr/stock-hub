@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "StockHub.Api": {
+    "StockHubApi": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api",
@@ -25,7 +25,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": "true",
-      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+      "applicationUrl": "https://localhost:44370;http://localhost:50962"
     }
   }
 }

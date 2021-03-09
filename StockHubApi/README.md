@@ -51,7 +51,7 @@ dotnet run
 
 ### Using an IDE
 
-Test classes are named by the schema `{Controller}{Layer}Tests.cs`. They are located in the project `StockHubApi.Tests`. You can execute them by using your preferred testrunner. 
+Test classes are named by the schema `{Model}{Layer}Tests.cs`. They are located in the project `StockHubApi.Tests`. You can execute them by using your preferred testrunner. 
 
 ### Using an CLI
 

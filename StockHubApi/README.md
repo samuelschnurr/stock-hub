@@ -1,6 +1,6 @@
 # StockHubApi
 
-This project represents the backend for the Angular frontend application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApp">StockHubApp</a>. 
+This project represents the backend for the Angular application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApp">StockHubApp</a>. 
 
 - REST API based on .NET 5
 - Configured to run on IISExpress and Kestrel

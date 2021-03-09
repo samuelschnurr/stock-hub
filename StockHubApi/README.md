@@ -5,7 +5,7 @@ This project represents the backend for the Angular frontend application <a href
 - REST API based on .NET 5
 - Configured to run on IISExpress and Kestrel
 - Database runs on Microsoft SQL Server Express 2019 LocalDB
-- Single controller for CRUD operations of shares
+- Single controller for CRUD operations of stocks
 - Global logging and exception handling
 - ORM with EF Core 5
 - Unit tests for all application layers
@@ -27,17 +27,21 @@ Now the project can be started and operated under IISExpress.
 
 ### Using an CLI
 
-Open the `dotnet` CLI and navigate to the folder where the `.csproj` of the `StockHubApi` project is located.
+Open the `dotnet` CLI and navigate to the folder where the `.csproj` of the project `StockHubApi` is located.
 
 Run the following command to build the project:
+
 ```
 dotnet build
 ```
+
 Now setup the database with the command:
+
 ```
 dotnet ef database update
 ```
-After that can run the project under Kestrel by:
+
+After that you can run the project under Kestrel by:
 
 ```
 dotnet run
@@ -47,11 +51,11 @@ dotnet run
 
 ### Using an IDE
 
-Test classes are named by the schema `{Controller}{Layer}Tests.cs` and are located in the project `StockHubApi.Tests`. You can execute them by using your preferred testrunner. 
+Test classes are named by the schema `{Controller}{Layer}Tests.cs`. They are located in the project `StockHubApi.Tests`. You can execute them by using your preferred testrunner. 
 
 ### Using an CLI
 
-Open the `dotnet` CLI and navigate to the folder where the `.csproj` of the `StockHubApi.Tests` project is located. To start the unit tests, run the command:
+Open the `dotnet` CLI and navigate to the folder where the `.csproj` of the project `StockHubApi.Tests` is located. To start the unit tests, run the command:
 
 ```
 dotnet test

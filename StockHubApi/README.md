@@ -9,7 +9,6 @@ This project represents the backend for the Angular application <a href="https:/
 - Global logging and exception handling
 - ORM with EF Core 5
 - Unit tests for all application layers
-- Uniform coding style
 - XML documentation
 
 ## Before you start

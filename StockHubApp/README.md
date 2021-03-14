@@ -14,10 +14,10 @@ This project represents the frontend for the .NET application <a href="https://g
 - Code documentation
 
 ## Before you start
-- Install the <a href="https://nodejs.org/en/">Node.js 14</a>
+- Install <a href="https://nodejs.org/en/">Node.js</a>
 - Install the <a href="https://angular.io/cli">Angular CLI</a> with the command `npm install -g @angular/cli`
-- Setup and run the <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApi">StockHubApi</a> to communicate with the backend
-- Notice that this application is hostet unter `https://localhost:4200/`
+- Setup and run the <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApi#stockhubapi">StockHubApi</a> to communicate with the backend
+- Notice that this application is hosted at `http://localhost:4200/`
 
 ## Build and run using an CLI
 

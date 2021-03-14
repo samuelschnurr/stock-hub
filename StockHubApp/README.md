@@ -1,30 +1,53 @@
-# StockHub
+# StockHubApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+This project represents the frontend for the .NET application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApi">StockHubApi</a>. 
 
-## Development server
+- Single Page Application based on Angular 11
+- Completely responsive
+- Dashboard with chart
+- Listview
+- Formeditor
+- Modal dialog
+- Notifications 
+- Routing
+- Internationalization (i18n)
+- Code documentation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Before you start
+- Install the <a href="https://nodejs.org/en/">Node.js 14</a>
+- Install the <a href="https://angular.io/cli">Angular CLI</a> with the command `npm install -g @angular/cli`
+- Setup and run the <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApi">StockHubApi</a> to communicate with the backend
+- Notice that this application is hostet unter `https://localhost:4200/`
 
-## Code scaffolding
+## Build and run using an CLI
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Open the terminal and navigate to the folder where the project `StockHubApp` is located.
 
-## Build
+Run the following command to install `node modules`:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+npm install
+```
 
-## Running unit tests
+Now start a development server and open the application in the browser with the command:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+ng serve --o
+```
 
-## Running end-to-end tests
+If you want to run the server with a different language configuration run:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+ng serve --o --configuration=de
+```
 
-## Further help
+## Run ESLint
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For linting the project run:
+
+```
+ng lint
+```
 
 ## License
 

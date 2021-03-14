@@ -1,6 +1,6 @@
 # StockHubApp
 
-This project represents the frontend for the .NET application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApi">StockHubApi</a>. 
+This project represents the frontend for the .NET application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApi#stockhubapi">StockHubApi</a>. 
 
 - Single Page Application based on Angular 11
 - Completely responsive

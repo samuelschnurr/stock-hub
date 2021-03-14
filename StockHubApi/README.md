@@ -1,6 +1,6 @@
 # StockHubApi
 
-This project represents the backend for the Angular application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApp">StockHubApp</a>. 
+This project represents the backend for the Angular application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApp#stockhubapp">StockHubApp</a>. 
 
 - REST API based on .NET 5
 - Configured to run on IISExpress and Kestrel
@@ -15,6 +15,7 @@ This project represents the backend for the Angular application <a href="https:/
 - Install the <a href="https://dotnet.microsoft.com/download/dotnet/5.0">.NET 5 SDK</a>
 - Install the <a href="https://www.microsoft.com/de-de/sql-server/sql-server-downloads?rtc=1">Microsoft SQL Server Express 2019 LocalDB</a>
 - Install the <a href="https://docs.microsoft.com/en-us/ef/core/cli/dotnet">EF Core cli tools</a> with the command `dotnet tool install --global dotnet-ef`
+- Notice that this application is hosted at `https://localhost:44370/`
 
 ## Build and run
 

@@ -4,11 +4,13 @@ on:
   push:
     branches: [ main ]
     paths:
-      - StockHubApi/**
+    - .github/**
+    - StockHubApi/**
   pull_request:
     branches: [ main ]
     paths:
-      - StockHubApi/**
+    - .github/**
+    - StockHubApi/**
 
 jobs:
   Build:

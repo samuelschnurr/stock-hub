@@ -15,10 +15,6 @@ jobs:
   
     runs-on: windows-latest
     
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
       - uses: actions/checkout@v1
       
@@ -30,12 +26,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Node ${{ matrix.node-version }}
+      - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14.x
 
       - name: npm ci and npm run build
         run: |
           npm ci
           npm run build:ci
+        working-directory: StockHubApp

@@ -1,5 +1,8 @@
 # StockHub
 
+[![.NET CI](https://github.com/samuelschnurr/stock-hub/actions/workflows/dotnet.yml/badge.svg)](https://github.com/samuelschnurr/stock-hub/actions/workflows/dotnet.yml)
+[![Node CI](https://github.com/samuelschnurr/stock-hub/actions/workflows/node.yml/badge.svg)](https://github.com/samuelschnurr/stock-hub/actions/workflows/node.yml)
+
 This repository provides a platform for managing stock holdings. The prototypical implementation is used for evaluation and as a showcase. It is separated in two parts which are described in more detail under the links provided.
 
 - <a href="https://github.com/samuelschnurr/stock-hub/blob/main/StockHubApp">StockHubApp</a>: Frontend with Angular 11

@@ -35,5 +35,6 @@ jobs:
       - name: npm ci and npm run build
         run: |
           npm ci
-          npm run build:ci
+          npm run clean
+          npm run build
         working-directory: StockHubApp

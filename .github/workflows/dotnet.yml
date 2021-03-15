@@ -10,6 +10,9 @@ on:
     paths:
     - StockHubApi/**
   workflow_dispatch:
+    branches: [ main ]
+    paths:
+    - StockHubApi/**
 
 jobs:
   Build:

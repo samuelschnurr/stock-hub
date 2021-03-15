@@ -1,10 +1,14 @@
-name: CI
+name: .NET CI
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - StockHubApi/**
   pull_request:
     branches: [ main ]
+    paths:
+      - StockHubApi/**
 
 jobs:
   Build:
@@ -17,12 +21,15 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    
     - name: Restore dependencies
       run: dotnet restore
       working-directory: StockHubApi
+    
     - name: Build
       run: dotnet build --no-restore
       working-directory: StockHubApi
+    
     - name: Test
       run: dotnet test --no-build --verbosity normal
       working-directory: StockHubApi

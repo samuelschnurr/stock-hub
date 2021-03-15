@@ -3,8 +3,12 @@ name: Node CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - StockHubApi/**
   pull_request:
     branches: [ main ]
+    paths:
+      - StockHubApi/**
 
 jobs:
   Build:

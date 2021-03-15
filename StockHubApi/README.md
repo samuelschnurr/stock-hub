@@ -1,5 +1,7 @@
 # StockHubApi
 
+[![.NET CI](https://github.com/samuelschnurr/stock-hub/actions/workflows/dotnet.yml/badge.svg)](https://github.com/samuelschnurr/stock-hub/actions/workflows/dotnet.yml)
+
 This project represents the backend for the Angular application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApp#stockhubapp">StockHubApp</a>. 
 
 - REST API based on .NET 5

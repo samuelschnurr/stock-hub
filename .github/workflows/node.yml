@@ -1,7 +1,6 @@
 name: Node CI
 
 on:
-  workflow_dispatch:
   push:
     branches: [ main ]
     paths:
@@ -10,6 +9,7 @@ on:
     branches: [ main ]
     paths:
     - StockHubApp/**
+  workflow_dispatch:
 
 jobs:
   Build:

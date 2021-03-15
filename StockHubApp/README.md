@@ -1,5 +1,7 @@
 # StockHubApp
 
+[![Node CI](https://github.com/samuelschnurr/stock-hub/actions/workflows/node.yml/badge.svg)](https://github.com/samuelschnurr/stock-hub/actions/workflows/node.yml)
+
 This project represents the frontend for the .NET application <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApi#stockhubapi">StockHubApi</a>. 
 
 - Single Page Application based on Angular 11

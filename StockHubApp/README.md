@@ -21,7 +21,7 @@ This project represents the frontend for the .NET application <a href="https://g
 - Setup and run the <a href="https://github.com/samuelschnurr/stock-hub/tree/main/StockHubApi#stockhubapi">StockHubApi</a> to communicate with the backend
 - Notice that this application is hosted at `http://localhost:4200/`
 
-## Build and run using an CLI
+## Build and run using a CLI
 
 Open the terminal and navigate to the folder where the project `StockHubApp` is located.
 

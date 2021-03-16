@@ -27,7 +27,7 @@ If you're using an integrated development environment like Visual Studio, you ca
 After a `package restore` and `build` of the project make sure you executed `Update-Database` to apply the EF Core Migrations.
 Now the project can be started and operated under IISExpress.
 
-### Using an CLI
+### Using a CLI
 
 Open the `dotnet` CLI and navigate to the folder where the `.csproj` of the project `StockHubApi` is located.
 
@@ -55,7 +55,7 @@ dotnet run
 
 Test classes are named by the schema `{Model}{Layer}Tests.cs`. They are located in the project `StockHubApi.Tests`. You can execute them by using your preferred testrunner. 
 
-### Using an CLI
+### Using a CLI
 
 Open the `dotnet` CLI and navigate to the folder where the `.csproj` of the project `StockHubApi.Tests` is located. To start the unit tests, run the command:
 

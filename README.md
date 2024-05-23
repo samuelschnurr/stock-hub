@@ -5,6 +5,8 @@
 
 This repository provides a platform for managing stock holdings. The prototypical implementation is used for evaluation and as a showcase. 
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V3WX3OK)
+
 ## Documentation
 
 StockHub is separated in two parts which are described in more detail under the links provided.
